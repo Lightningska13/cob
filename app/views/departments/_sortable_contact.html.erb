@@ -1,0 +1,9 @@
+<li id='image_<%= sortable_contact.id %>' class='showcase_images'>
+	<%= image_tag sortable_contact.photo.url(:small), :class => "photos" %>
+ 	<%= link_to	'Edit', edit_department_contact_path(@department, sortable_contact.id), :class => 'foot' %>  
+	<%= link_to 'Delete', department_contact_path(@department, sortable_contact.id),
+        :confirm => 'Are you sure?', :method => :delete, :class => 'foot'%><br />
+						<%= sortable_contact.firstname %> <%= sortable_contact.lastname %> 
+						<span class="contact_title"><%= sortable_contact.title %> </span>
+    
+</li>

@@ -1,0 +1,25 @@
+<div id="subContent" class="sidebar" style="margin-top:0;">
+
+	<%= render 'dept_list' %>
+
+</div>
+
+<div id="centerCol">
+<h1>How Do I ...</h1>
+
+<% if admin? %>
+	<br />
+	<%= link_to 'New FAQ', new_faq_path, :class => 'admin' %> 
+	<%= link_to 'FAQ Categories', faqs_categories_path, :class => 'admin' %>
+<% end %>
+
+<% @faq_dept.each do |dept, @faqs| %>  
+	<a name="<%= dept.id %>"></a>
+ <h2 class="deptDivider description"><%= dept.name %></h2> 
+ 		<%= render :partial=>"faq_list" %>
+ 		
+
+<% end %> 
+
+</div>
+

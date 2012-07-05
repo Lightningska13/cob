@@ -1,0 +1,51 @@
+<div id="centerCol">
+<%= form_for @user do |form| %>  
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this event from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<div style="float:left; margin-right:20px;">
+	<p>  
+     <%= form.label :login, "Username" %><br /> 
+     <%= form.text_field :login %>  
+   </p>  
+	<p>  
+     <%= form.label :id, "Full Name" %><br /> 
+     <%= form.text_field :id %>  
+   </p>  
+   <p>  
+     <%= form.label :admin_level, "Level" %>  <br />
+     <%= select("user", "admin_level", {"Admin"=>10, "Normal"=>5}) %>  
+   </p>  
+  <p>  
+     <%= form.label :password, "Password" %>  <br />
+     <%= form.password_field :password %>  
+   </p>  
+   <p>  
+     <%= form.label :password_confirmation, "Password confirmation" %> <br /> 
+     <%= form.password_field :password_confirmation %>  
+   </p>  
+   <p>  
+     <%= form.submit "Submit" %>  
+   </p>  
+   </div>
+   <% if @user.admin_level < 10 %>
+			<div class="cat_list">
+			 <p> Select Departments</p>
+			 <% for department in Department.find(:all,:order=>"id asc") %>  
+					 <div>  
+						 <label><%= check_box_tag "user[department_ids][]", department.id, @user.departments.include?(department) %>  
+						 <%= department.name %>  </label>
+					 </div>  
+			 <% end %>
+			</div>
+		<% end %>
+<% end %>  
+</div>
+

@@ -1,0 +1,60 @@
+/* CSS Document */
+body {
+	background-color: #CCCCCC;
+}
+nav {
+	margin-left: 155px;
+	margin-top: -56px;
+}
+nav img {
+	margin-left: -5px;
+}
+nav img:hover {
+	opacity: .9;
+}
+#leftCol {
+	float: left;
+	width: 150px;
+	background-color: #003663;
+	background-image: url('/assets/bg/navRepeater.png');
+	background-position:top left;
+	background-repeat:repeat-y;
+	color: #FFFFFF;
+}
+#middleCol {
+	float: left;
+	width: 360px;
+	margin-top: -10px;
+	background-color: #FFFFFF;
+}
+#middleCol h1 {
+	margin:10px; padding:0;
+	color:#003663;
+	font-size:x-large;
+	border-bottom:1px inset #ccc;
+}
+#middleCol h2 {
+	margin:20px 10px 0 10px; padding:0;
+	color:#003663;
+	font-size:large;	
+	/*border-top:1px inset #ccc;*/
+	line-height:1.5em;
+}
+#rightCol {
+	float: left;
+	width: 250px;
+	margin-top: -10px;
+	background-color: #FFFFFF;
+}
+/* LOGIN */
+.login {
+	font-size: 80%;
+	margin-left: 175px;
+	margin-top: -5px;
+}
+.login span {
+	font-size: 65%;
+	padding-left: 15px;
+}
+/* Showcase */
+

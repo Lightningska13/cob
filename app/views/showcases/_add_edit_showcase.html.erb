@@ -1,0 +1,80 @@
+<%= form_for(@showcase, :html => { :multipart => true }) do |f| %>
+<% if @showcase.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@showcase.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+    <ul>
+    <% @showcase.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>  <div id="subContent" >
+ 		<% if false #use for multiple showcases %>
+		<div class="showcase_image_list">
+		 <h3> Select Services</h3>
+		 <% for service in @services %>  
+				 <div>  
+					 <label><%= check_box_tag "showcase[service_ids][]", service.id, @showcase.services.include?(service) %>  
+					 <%= service.name %>  </label>
+				 </div>  
+		 <% end %>
+		<br />
+		</div>
+		<% end %>
+   
+   <% if @button_text == 'Update' %> 
+   <div class="showcase_image_list">
+    <h2 class="title">Media</h2>   
+ 	<%= link_to "Add Media", new_showcase_showcase_media_path(@showcase), :class=>'foot' %><br />
+    <%= render :partial => 'showcase_media_draggable'%>
+    
+  </div>
+   <div class="showcase_image_list">
+    <h2 class="title">Image Gallery</h2>   
+ 	<%= link_to "Add Photo", new_showcase_showcase_image_path(@showcase), :class=>'foot' %><br />
+	<span class="instructions">Drag images to reorder them</span>
+    <%= render :partial => 'showcase_image_draggable'%>
+    
+  </div>
+  <% else %>
+  	<span class="instructions"> Add Images and Media after creating showcase</span>
+  <% end %> 
+    <div>
+    <%= f.label :sidebar %><br />
+     <%= f.cktext_area(:sidebar, :toolbar => 'Basic', :width => '250px', :height => '300px') %>
+    </div>
+
+ </div>
+<div>
+	<div class="field">
+    	<%= f.label :title %><br />
+    	<%= f.text_field :title, :size=>60 %>
+	</div>
+	<div class="field">
+    	<% if @showpic %>
+		<%= image_tag @showcase.photo.url(:large) %> <br />
+		<label class="instructions"><input type="checkbox" name="delete_image" value="1" /> Check to remove image</label>
+    	<br />
+		<% end %>
+      <%= f.label :photo, "Main Image" %>  
+      <%= f.file_field :photo %>  
+	</div>
+	<div class="field">
+    	<%= f.label :published %><br />
+    	<%= f.check_box :published %>
+	</div>
+	<div class="field">
+    	<%= f.label :publish_date %><br />
+    	<%= f.date_select :publish_date %>
+	</div>
+	<div class="field">
+    	<%= f.label :blurb %><br />
+    	<%= f.text_area :blurb, :rows=>'5', :cols=>'30' %>
+	</div>
+	<div class="field">
+    	<%= f.label :article %><br />
+    	<%= f.cktext_area(:article, :toolbar => 'Basic', :width => '500px', :height => '400px') %>	
+  	</div>
+  	<div class="actions">
+    	<%= f.submit %>
+  	</div>
+ </div>
+<% end %>

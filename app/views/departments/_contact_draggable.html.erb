@@ -1,0 +1,6 @@
+
+<ol id="sortable_thumbs">
+	<%= render :partial=> 'sortable_contact', :collection => @contacts %>
+</ol>
+
+<%= sortable_element("sortable_thumbs", :url => sort_departments_path ) %>

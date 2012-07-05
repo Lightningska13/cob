@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  ac_id: MyString
+  species: MyString
+  sex: MyString
+  age: MyString
+  breed: MyString
+  arrival_date: 2012-06-18
+  release_date: 2012-06-18
+  final_date: 2012-06-18
+  adoptable: MyString
+  location: MyString
+  description: MyText
+  pic_file_name: MyString
+  pic_file_size: 1
+  pic_content_type: MyString
+
+two:
+  id: 1
+  ac_id: MyString
+  species: MyString
+  sex: MyString
+  age: MyString
+  breed: MyString
+  arrival_date: 2012-06-18
+  release_date: 2012-06-18
+  final_date: 2012-06-18
+  adoptable: MyString
+  location: MyString
+  description: MyText
+  pic_file_name: MyString
+  pic_file_size: 1
+  pic_content_type: MyString

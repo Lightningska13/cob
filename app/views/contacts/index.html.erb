@@ -1,0 +1,32 @@
+<h1>Listing contacts</h1>
+
+<table>
+  <tr>
+    <th>Department</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Title</th>
+    <th>Email</th>
+    <th>Image file</th>
+    <th>Position</th>
+  </tr>
+
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%=h contact.department_id %></td>
+    <td><%=h contact.firstname %></td>
+    <td><%=h contact.lastname %></td>
+    <td><%=h contact.title %></td>
+    <td><%=h contact.email %></td>
+    <td><%=h contact.image_file %></td>
+    <td><%=h contact.position %></td>
+    <td><%= link_to 'Show', contact %></td>
+    <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+    <td><%= link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New contact', new_contact_path %>

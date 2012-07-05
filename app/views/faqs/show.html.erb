@@ -1,0 +1,28 @@
+<div id="subContent" class="sidebar" style="margin-top:0;">
+
+	<%= render 'dept_list' %>
+
+</div><div id="centerCol">
+<h1>How Do I ...</h1>
+<h2 class="deptDivider"><%= @faq.department.name %></h2>
+<div class="question"><%=h @faq.question %></div>
+<div class="answer"><%= @faq.answer %></div>
+
+	<% if @faq.url.size > 0 %>
+	<br /><br />
+	<span class="instructions">Additional information is available at:  <%= link_to @faq.url, @faq.url %></span>
+	<% end %>
+	<br /><br />
+	<span class="list_date">posted <%= @faq.updated_at.strftime("%m-%d-%Y")  %>
+
+		[<%= link_to @faq.department.name, department_path(@faq.department) %>] </span> 
+	
+
+
+<% if auth?(@faq.department_id) %>
+<br />
+<%= link_to 'Edit', edit_faq_path(@faq), :class=>'admin' %> 
+<%= link_to 'Back', faqs_path, :class=>'admin' %>
+<% end %>
+
+</div>	

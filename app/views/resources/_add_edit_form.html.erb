@@ -1,0 +1,81 @@
+
+<%- content_for(:fck) do -%>
+	<%= javascript_include_tag 'changeContent.js' -%>
+<%- end -%>
+
+<%= form_for([@resource], :html => { :multipart => true }) do |f| %>
+<% if @resource.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@resource.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+    <ul>
+    <% @resource.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>  <% if !@resource.resource_type # only show for new items %>
+  <p>
+    <%= f.label :resource_type %><br />
+    <label style="margin-right:20px;"><%= radio_button("resource", "resource_type", "Document", :checked => true, :onclick => "changeContent('1');")  %> Document </label>
+    <label><%= radio_button("resource", "resource_type", "Link", :onclick => "changeContent('2');")  %> Link </label>
+  </p>
+	<% end %>
+		<p>
+			<%= f.label :title %><br />
+			<%= f.text_field :title, :size=> 80 %>
+		</p>
+		<div id="content_area">
+  <% if @resource.resource_type == 'Link' %>
+		<p>
+				<%= f.label :res_file_name, "URL" %>  
+				<%= f.text_field :res_file_name, :size=> 80 %>
+				<span class="instructions"> e.g. http://www.amazon.com</span>
+		</p>		
+	<% else %>
+		<p>
+				<% if @resource.res_file_name %>
+					<%= link_to "#{image_tag('news_icon_sm.gif', :border => '0')} View Document", @resource.res.url, :class=>'foot' %>
+					<br />
+				<% end %>
+				<%= f.label :res, "Upload New Document" %>  
+				<%= f.file_field :res %>  
+		</p>
+	<% end %>
+		</div>
+		<p>
+			<%= f.label :featured %><br />
+			<%= f.check_box :featured %>
+		</p>
+		<p>
+			<%= f.label :position %><br />
+			<%= f.text_field :position, :size=> 5 %>
+		</p>
+		<p>
+			 <%= f.label :description %><br />
+		   	 <%= f.cktext_area :description, :toolbar=>'Basic', :width=>'500px', :height=>'200px' %>
+		</p>
+			<div class="cat_list">
+			<p> Select Categories</p>
+			 <% for rescat in Rescat.find(:all) %>  
+					 <div>  
+						 <label><%= check_box_tag "resource[rescat_ids][]", rescat.id, @resource.rescats.include?(rescat) %>  
+						 <%= rescat.category %>  </label>
+					 </div>  
+			 <% end %>
+			 </div>
+			<div class="cat_list">
+			 <p> Select Departments</p>
+			 <% for department in Department.find(:all,:order=>"name asc") %>  
+					 <div>  
+						 <label><%= check_box_tag "resource[department_ids][]", department.id, @resource.departments.include?(department) %>  
+						 <%= department.name %>  </label>
+					 </div>  
+			 <% end %>
+			</div>
+
+		<p style="clear:both;">
+			<%= f.submit @button_text %>
+		</p>
+
+<% end %>

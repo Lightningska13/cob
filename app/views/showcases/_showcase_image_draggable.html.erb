@@ -1,0 +1,41 @@
+
+<ol id="showcase_images">
+   <% @showcase.showcase_images.each do |showcase_image| %>  
+	<li id="showcase_image_<%= showcase_image.id %>" class='showcase_images'>
+		<%= image_tag showcase_image.photo.url(:small), :class => "photos move" %>
+	 	<%= link_to	'Edit', edit_showcase_showcase_image_path(@showcase, showcase_image.id), :class => 'foot' %>  
+		<%= link_to 'Delete', showcase_showcase_image_path(@showcase, showcase_image.id),
+	        :confirm => 'Are you sure?', :method => :delete, :class => 'foot'%>
+		<span class="caption" ><%= showcase_image.caption %></span>
+
+	</li>
+	<% end %>
+</ol>
+
+<% content_for :javascript  do %>
+  <%= javascript_tag do %>
+    // Sorting the list
+
+    $(document).ready(function(){
+      $('#showcase_images').sortable({
+        axis: 'y',
+        dropOnEmpty: false,
+        handle: '.photos',
+        cursor: 'move',
+        items: 'li',
+        opacity: 0.4,
+        scroll: true,
+        update: function(){
+          $.ajax({
+            type: 'post',
+            data: $('#showcase_images').sortable('serialize'),
+            dataType: 'script',
+            complete: function(request){
+              $('#showcase_images').effect('highlight');
+              },
+            url: '/showcases/sort'})
+          }
+        });
+      });
+  <% end %>
+<% end %>

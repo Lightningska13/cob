@@ -1,0 +1,45 @@
+<div id="centerCol">
+<p>
+  <b>Resource type:</b>
+  <%=h @resource.resource_type %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @resource.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @resource.description %>
+</p>
+
+<p>
+  <b>Res file name:</b>
+  <%=h @resource.res_file_name %>
+</p>
+
+<p>
+  <b>Res file size:</b>
+  <%=h @resource.res_file_size %>
+</p>
+
+<p>
+  <b>Res content type:</b>
+  <%=h @resource.res_content_type %>
+</p>
+
+<p>
+  <b>Featured:</b>
+  <%=h @resource.featured %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @resource.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_resource_path(@resource), :class=>'admin' %> |
+<%= link_to 'Back', resources_path, :class=>'admin' %>
+</div>

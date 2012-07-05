@@ -1,0 +1,24 @@
+<div id="centerCol">
+<h1>Listing FAQ Categories</h1>
+
+<table>
+  <tr>
+    <th></th>
+   	<th></th>
+    <th>Category</th>
+  </tr>
+
+<% @faq_categories.each do |faq_category| %>
+  <tr class="<%= cycle('even', 'odd') %>">
+    <td><%= link_to 'Edit', edit_faq_category_path(faq_category), :class=>'admin' %></td>
+    <td><%= link_to 'Delete', faq_category, :confirm => 'Are you sure?', :method => :delete, :class=>'admin' %></td>
+    <td><%=h faq_category.category %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New FAQ Category', new_faq_category_path, :class=>'admin' %> 
+<%= link_to 'FAQ List', faqs_path, :class=>'admin' %>
+</div>

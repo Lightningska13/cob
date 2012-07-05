@@ -1,0 +1,8 @@
+<li id='media_<%= sortable_media.id %>' class='showcase_medias'>
+	<%= image_tag 'news_icon.gif' %>
+ 	<%= link_to	'Edit', edit_showcase_showcase_media_path(@showcase, sortable_media.id), :class => 'foot' %>  
+	<%= link_to 'Delete', showcase_showcase_media_path(@showcase, sortable_media.id),
+        :confirm => 'Are you sure?', :method => :delete, :class => 'foot'%>
+	<span class="caption" ><b><%= sortable_media.media_file_name %></b> - <%= sortable_media.caption %></span>
+    
+</li>

@@ -1,0 +1,38 @@
+<p>
+  <b>Department:</b>
+  <%=h @contact.department_id %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%=h @contact.firstname %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%=h @contact.lastname %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @contact.title %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @contact.email %>
+</p>
+
+<p>
+  <b>Image file:</b>
+  <%=h @contact.image_file %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @contact.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>

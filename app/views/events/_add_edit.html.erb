@@ -1,0 +1,51 @@
+<%= form_for(@event) do |f| %>
+<div id="centerCol">
+	<% if @event.errors.any? %>
+	  <div id="error_explanation">
+	    <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+	    <ul>
+	    <% @event.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+  <p>
+    <%= f.label :event_type %><br />
+    <%= f.select(:event_type, ['Event','News']) %><br />
+   		<span class="instructions">An Event will appear on the web site 30 days prior to its start date, and fall off after the end date. <br />
+	 		A News item will be displayed on its start date, and fall off after the end date.</span>
+
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :size => 80 %>
+  </p>
+  <p>
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </p>
+  <p>
+    <%= f.label :end_date %><br />
+    <%= f.date_select :end_date %>
+  </p>
+	  <p>
+	    <%= f.label :blurb %><br />
+	    <%= f.text_area :blurb, :rows => 4, :cols => 60 %>
+	  </p>
+	  <p>
+    <%= f.label :description %><br />
+   	<%= f.cktext_area :description, :toolbar=>'Basic', :width=>'500px', :height=>'200px' %>  </p>
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url, :size => 80 %>
+  </p>
+	<p>
+    <%= f.label 'Department' %><br />
+		<%= collection_select(:event, :department_id, @departments, :id, :name) %>
+  </p>
+  <div style="clear:both;">
+    <%= f.submit @button_text %>
+  </div>
+</div>
+<% end %>

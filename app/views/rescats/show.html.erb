@@ -1,0 +1,16 @@
+<div id="centerCol">
+<p>
+  <b>Category:</b>
+  <%=h @rescat.category %>
+</p>
+
+<p>
+  <b>Blurb:</b>
+  <%=h @rescat.blurb %>
+</p>
+
+
+<%= link_to 'Edit', edit_rescat_path(@rescat) %> |
+<%= link_to 'Back', rescats_path %>
+
+</div>

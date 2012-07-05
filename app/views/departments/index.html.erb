@@ -1,0 +1,30 @@
+<div id="leftCol">
+	<div class="textHolder">
+		This is what goes on the left side of the page.
+	</div><!-- end textHolder -->
+	<div id="navHolder">
+	</div><!-- end navHolder -->
+</div><!-- end leftCol -->
+<div id="middleCol">
+<h1>Phone Listing</h1>
+<%= link_to 'New department', new_department_path, :class=>"admin" if auth? %>
+
+<table style="margin-top:20px;">
+
+<% @departments.each do |department| %>
+  <tr class="<%= cycle('even', 'odd') %>">
+    <td><%= link_to department.name, department %></td>
+    <td><%= department.phone %></td>
+    <% if admin? %>
+   	<td><%= link_to 'Show', department, :class=>"admin" %></td>
+    <td><%= link_to 'Edit', edit_department_path(department), :class=>"admin" if auth?(department.id)%></td>
+    <td><%= link_to 'Delete', department, :class=>"admin", :confirm => 'Are you sure?', :method => :delete if auth?(department.id) %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New department', new_department_path, :class=>"admin" if auth? %>
+</div>
+<div id="rightCol">
+</div>

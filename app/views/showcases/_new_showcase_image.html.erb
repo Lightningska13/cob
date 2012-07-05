@@ -1,0 +1,21 @@
+<h1>New showcase_image</h1>
+
+<% form_for(@showcase_image, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+    <%= f.hidden_field :showcase_id %>
+
+  <p>
+      <%= f.label :photo, "Photo" %>  
+      <%= f.file_field :photo %>  
+  </p>
+  <p>
+    <%= f.label :caption %><br />
+    <%= f.text_area :caption %>
+  </p>
+
+
+ <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+

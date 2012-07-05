@@ -1,0 +1,22 @@
+<div id="leftCol">
+	<div class="textHolder">
+		This is what goes on the left side of the page.
+	</div><!-- end textHolder -->
+	<div id="navHolder">
+	</div><!-- end navHolder -->
+</div><!-- end leftCol -->
+<div id="middleCol" class="sidebar" style="margin-top:0;">
+	<h1>External Resources</h1>
+
+<h3 class="title">Resource Categories</h3>
+<p><span class="instructions">Click to Browse by Category</span></p>
+		<ul>
+		<% @rescats.each do |cat| %>
+			<% unless cat.resources.empty? %>
+			<li><%= link_to cat.category, :action=>:index, :controller=>:resources, :cat=>cat %></li>
+			<% end %>
+		<% end %>
+		</ul>
+	<p><%= link_to 'View Uncategorized', {:action=>:index, :controller=>:resources, :all=>1},:class => 'admin' if admin? %></p>
+</div>
+

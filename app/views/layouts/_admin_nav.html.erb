@@ -1,0 +1,13 @@
+<% if admin? %>
+	<div class="login">
+		<%=section_link('Departments',:controller => 'departments', :action => 'index')%>
+		<%=section_link('FAQs',:controller => 'faqs', :action => 'index')%>
+		<%=section_link('FAQs Categories',:controller => 'faqs_categories', :action => 'index')%>
+		<%=section_link('News & Events',:controller => 'events', :action => 'index')%>
+		<%=section_link('Resources',:controller => 'resources', :action => 'index')%>
+		<%=section_link('Events',:controller => 'events', :action => 'index')%>
+		<%=section_link('Users',:controller => 'users', :action => 'index') %>
+		<%= link_to 'Logout', logout_path %>	
+		<span><%= current_user.name %> logged in</span>
+	</div>
+<% end %>

@@ -1,0 +1,25 @@
+<div id="centerCol">
+<h1>Listing Resource Categories</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th>Category</th>
+    <th>Blurb</th>
+  </tr>
+
+<% @rescats.each do |rescat| %>
+  <tr class="<%= cycle('even', 'odd') %>">
+    <td><%= link_to 'Edit', edit_rescat_path(rescat), :class=>"admin" %></td>
+    <td><%= link_to 'Destroy', rescat, :confirm => 'Are you sure?', :method => :delete, :class=>"admin" %></td>
+    <td><%=h rescat.category %></td>
+    <td class='instructions'><%= rescat.blurb %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Category', new_rescat_path, :class=>"admin" %> <%= link_to 'Resource List', resources_path, :class=>'admin' %>
+</div>

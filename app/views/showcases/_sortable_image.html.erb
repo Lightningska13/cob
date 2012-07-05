@@ -1,0 +1,8 @@
+<li id='image_<%= sortable_image.id %>' class='showcase_images'>
+	<%= image_tag sortable_image.photo.url(:small), :class => "photos" %>
+ 	<%= link_to	'Edit', edit_showcase_showcase_image_path(@showcase, sortable_image.id), :class => 'foot' %>  
+	<%= link_to 'Delete', showcase_showcase_image_path(@showcase, sortable_image.id),
+        :confirm => 'Are you sure?', :method => :delete, :class => 'foot'%>
+	<span class="caption" ><%= sortable_image.caption %></span>
+    
+</li>

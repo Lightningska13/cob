@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Branch County Michigan</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<%= image_tag("/assets/header/header1.png") %>
+	</header>
+	<nav>
+		<%= render "/layouts/main_nav" %>
+	</nav><!--endmainNav-->
+	<div id="adminNav">
+	<%= render "/layouts/admin_nav" if admin? %>
+	</div><!--endadminNav-->
+		<p style="color: #907757; margin-left:190px;"><%= flash[:notice] %></p>
+	<%= yield %>
+</body>
+</html>

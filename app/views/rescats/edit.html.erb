@@ -1,0 +1,29 @@
+<div id="centerCol">
+<h1>Editing Resource Category</h1>
+
+<%= form_for(@rescat) do |f| %>
+
+<% if @rescat.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@rescat.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+    <ul>
+    <% @rescat.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  <p>
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </p>
+  <p>
+    <%= f.label :blurb %><br />
+   	<%= f.cktext_area :blurb, :toolbar=>'Basic', :width=>'200px', :height=>'200px' %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Cancel', rescats_path, :class=>"admin" %>
+</div>

@@ -1,0 +1,78 @@
+<%- content_for(:lightbox) do -%>
+		<script type="text/javascript" src="/javascripts/jquery_lightbox/js/jquery.lightbox.min.js?show_linkback=false"></script>
+
+<%- end -%>
+<div id="subContent" class="sidebar">
+<p><%= link_to "View Archives", showcases_path, :class=>'foot' %></p>
+
+<% if @showcase.showcase_medias.size >= 1 %>
+			
+		<h3 class="title">Media</h3>
+			<div id="mediaList">
+					<% @showcase.showcase_medias.each do |media| %>
+						<%= link_to "#{image_tag('news_icon.gif', :alt=> media.media_file_name)} Download Now", media.media.url, :title=>media.media_file_name, :target=>'_blank' %>
+						<span class="caption"><%= media.caption %></span>
+						
+				<% end %>
+	</div>
+	
+<% end %>
+
+<!-- IMAGE GALLERY - start -->
+
+<% if !@showcase.showcase_images.empty? %>
+		<h3 class="title">Gallery</h3>
+			<div id="imageGallery" class="clearfix">
+				<ul>
+					<% @showcase.showcase_images.each do |image| %>
+					<li>
+						<%= link_to image_tag(image.photo.url(:small)), image.photo.url, :rel => "lightbox[gallery]", :title => image.caption %>
+					</li>
+					<% end %>
+				</ul>
+				<br clear="both" />
+			
+			</div>
+			<p><span class="instructions">Click on a picture to launch slide show</span></p>
+<% end %>
+
+<!-- IMAGE GALLERY - end -->
+	
+			<% if @showcase.sidebar.size >= 1 %>		
+			<p class="title">Sidebar</p>	
+			<p><%= @showcase.sidebar %></p>
+			<% end %>
+
+</div>
+<div id="centerCol">
+
+<h2><%=h @showcase.title %></h2>
+<h2 class="monthDivider"><%=h @showcase.publish_date.strftime("%B %Y") %></h2>
+
+    <% if @showpic %>
+	<div class="leftImageWrapper"><%= image_tag @showcase.photo.url(:large) %> </div>
+	<% end %>
+
+
+
+	
+	<p><i><%= simple_format(@showcase.blurb) %></i></p>
+		<div style="margin-left:10px">
+		<%= @showcase.article %>
+		</div>
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+<% if admin? %>
+<%= link_to 'Edit', edit_showcase_path(@showcase), :class=>'admin' %> 
+<%= link_to 'Back', showcases_path, :class=>'admin' %>
+<% end %>

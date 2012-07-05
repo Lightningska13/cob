@@ -1,0 +1,53 @@
+
+<%- content_for(:fck) do -%>
+	<%= javascript_include_tag :fckeditor %>
+<%- end -%>
+
+<%= form_for(@faq) do |f| %>
+<div id="subContent">
+	 <h2 class="title"><b>Select Categories</b></h2>
+	 <% for cat in FaqCategory.find(:all) %>  
+			 <div>  
+				 <label><%= check_box_tag "faq[faq_category_ids][]", cat.id, @faq.faq_categories.include?(cat) %>  
+				 <%= cat.category %>  </label>
+			 </div>  
+	 <% end %>
+</div>
+
+<div id="centerCol">
+	<% if @faq.errors.any? %>
+	  <div id="error_explanation">
+	    <h2><%= pluralize(@faqs.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+	    <ul>
+	    <% @faqs.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+  <p>
+    <%= f.label :question %><br />
+    <%= f.text_field :question, :size=> 80 %>
+  </p>
+  <p>
+     <%= f.label :answer %><br />
+   	 <%= f.cktext_area :answer, :toolbar=>'Basic', :width=>'500px', :height=>'200px' %>  </p>
+	</p>
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url, :size=> 80 %>
+  </p>
+	<p>
+    <%= f.label 'Department' %><br />
+		<%= collection_select(:faq, :department_id, @departments, :id, :name) %>
+  </p>
+  <p>
+    <%= f.label :featured %><br />
+    <%= f.check_box :featured %>
+  </p>
+  <p>
+    <%= f.submit @button_text %>
+  </p>
+</div>
+<% end %>

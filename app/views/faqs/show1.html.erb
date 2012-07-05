@@ -1,0 +1,33 @@
+<p>
+  <b>Question:</b>
+  <%=h @faq.question %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%=h @faq.answer %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @faq.url %>
+</p>
+
+<p>
+  <b>Featured:</b>
+  <%=h @faq.featured %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @faq.position %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%=h @faq.department_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_faq_path(@faq) %> |
+<%= link_to 'Back', faqs_path %>

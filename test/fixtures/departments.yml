@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dept_name: MyString
+  dept_hours: MyString
+  dept_phone: MyString
+  dept_fax: MyString
+  dept_email: MyString
+  dept_location: MyString
+  dept_mailing: MyString
+  pic_file_name: MyString
+  pic_file_size: 1
+  pic_content_type: MyString
+
+two:
+  dept_name: MyString
+  dept_hours: MyString
+  dept_phone: MyString
+  dept_fax: MyString
+  dept_email: MyString
+  dept_location: MyString
+  dept_mailing: MyString
+  pic_file_name: MyString
+  pic_file_size: 1
+  pic_content_type: MyString

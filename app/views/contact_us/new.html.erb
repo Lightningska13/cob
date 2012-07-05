@@ -1,0 +1,31 @@
+<section id="middleCol">
+	<h1>Contact Us</h1>
+		<h2>Have a question? Let us know.</h2>
+		<p>Please fill out the form below, give us a call, or visit the store!</p>
+		<%= form_for(:contact_us, :url => contact_us_url, :html => { :class => 'contact' }) do |f| %>
+		<div class="formSection" style="border:none;">
+		  <fieldset>
+		  <div class="input_block" style="float:left;">
+			<%= f.label :name %>
+		    <%= f.text_field :name, :size=>"40" %>
+		  </div>
+		  <div class="input_block" style="float:left;">
+			<br />
+			<%= f.label :email %>
+		    <%= f.text_field :email, :size=>"40" %>
+		  </div>
+		  </fieldset>
+		  <fieldset>
+			<div class="input_block">
+			<%= f.label :question %>
+		    <%= f.text_area :message, :rows => "7", :cols=>"60"%>
+		  </div>
+		  </fieldset>
+			<div class="submit">
+		  <%= f.submit 'Submit' %>
+			</div>
+		</div>
+		<% end %>
+</section>
+<section id="rightBox">
+</section>

@@ -1,0 +1,50 @@
+<div id="centerCol">
+<% form_for([@department, @contact], :html => { :multipart => true }) do |f| %>
+<% if @contacts.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@contacts.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+    <ul>
+    <% @contacts.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+  <p>
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :postion %><br />
+    <%= f.text_field :position, :size=>3 %>
+  </p>
+  <p>
+    <% if @showpic %>
+	<%= image_tag @contact.photo.url(:large) %> <br />
+	<label class="instructions"><input type="checkbox" name="delete_image" value="1" /> Check to remove image</label>
+    <br />
+	<% end %>
+      <%= f.label :photo %>  
+      <%= f.file_field :photo %>  
+</p>
+	</p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', edit_department_path(@department) %>
+</div>

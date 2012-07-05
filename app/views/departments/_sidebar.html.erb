@@ -1,0 +1,63 @@
+<!-- IMAGE GALLERY - start -->
+
+<% if !@department.contacts.empty? %>
+	<% @contacts.each do |contact| %>
+			<div  class="contact clearfix">
+				<div>
+				<span class="contact_title"><%= contact.title %>: </span>
+				<p>
+				<% if contact.photo_file_name %>
+					<%= image_tag(contact.photo.url(:small), :class=>"photos") %><br />
+				<% end %>
+				<%= contact.firstname %> <%= contact.lastname %> <br />
+				<%= mail_to contact.email, contact.email %>
+				</p>
+				</div>
+			</div>
+	<% end %>
+			
+<% end %>
+
+<!-- IMAGE GALLERY - end -->
+
+<% if @department.hours.any? %>
+<div>
+  <span class="contact_title">Hours:</span>
+  <%= simple_format(@department.hours) %>
+</div>
+<% end %>
+
+<% if @department.phone.any? %>
+<div>
+  <span class="contact_title">Phone:</span>
+  <%= simple_format(@department.phone) %>
+</div>
+<% end %>
+
+<% if @department.fax.any? %>
+<div>
+  <span class="contact_title">Fax:</span>
+  <%= simple_format(@department.fax) %>
+</div>
+<% end %>
+
+<% if @department.email.any? %>
+<div>
+  <span class="contact_title">Email:</span>
+  <%= simple_format(@department.email) %>
+</div>
+<% end %>
+
+<% if @department.location.any? %>
+<div>
+  <span class="contact_title">Location:</span>
+  <%= simple_format(@department.location) %>
+</div>
+<% end %>
+
+<% if @department.mailing.any? %>
+<div>
+  <span class="contact_title">Mailing Address:</span>
+  <%= simple_format(@department.mailing) %>
+</div>
+<% end %>
