@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120625141422) do
+ActiveRecord::Schema.define(:version => 20120706145835) do
 
   create_table "animals", :force => true do |t|
     t.string   "ac_id"
@@ -61,13 +61,6 @@ ActiveRecord::Schema.define(:version => 20120625141422) do
     t.datetime "updated_at",         :null => false
   end
 
-  create_table "department_users_joins", :force => true do |t|
-    t.integer  "dept_id"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "departments", :force => true do |t|
     t.string   "dept_name"
     t.string   "dept_hours"
@@ -81,11 +74,19 @@ ActiveRecord::Schema.define(:version => 20120625141422) do
     t.string   "pic_content_type"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.text     "description"
   end
 
   create_table "departments_resources", :id => false, :force => true do |t|
     t.integer "department_id"
     t.integer "resource_id"
+  end
+
+  create_table "departments_users", :force => true do |t|
+    t.integer  "department_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "events", :force => true do |t|

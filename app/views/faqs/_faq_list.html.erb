@@ -1,11 +1,39 @@
-   <ul id="sort_faqs" style="list-style:url('/images/css/b-bullet.png')">
+   <ul id="faqs" style="list-style:url('/images/dash.png')">
    <% @faqs.each do |faq| %>  
-    <li id="item_<%= faq.id %>"><%= link_to faq.question, faq %>
-		  <% if auth?(faq.department_id) %>
-			<br />
+    <li id="faq_<%= faq.id %>"><%= image_tag("b-bullet.png") if (faq.featured and admin?)%><%= link_to faq.question, faq %>
+		  <% if admin? %>
+			<br /><span class="handle" style="<%= @cursor_style %>">DRAG</span>
 			<%= link_to	'Edit', edit_faq_path(faq), :class => 'admin' %>  
 			<%= link_to 'Delete', faq, :confirm => 'Are you sure?', :method => :delete, :class => 'admin'%>
-			<span class="handle" style="<%= @cursor_style %>">DRAG</span><% end %>
+			<% end %>
 		</li>
 	<% end %>
   </ul>
+
+<% content_for :javascript  do %>
+  <%= javascript_tag do %>
+    // Sorting the list
+
+    $(document).ready(function(){
+      $('#faqs').sortable({
+        axis: 'y',
+        dropOnEmpty: false,
+        handle: '.handle',
+        cursor: 'crosshair',
+        items: 'li',
+        opacity: 0.4,
+        scroll: true,
+        update: function(){
+          $.ajax({
+            type: 'post',
+            data: $('#faqs').sortable('serialize'),
+            dataType: 'script',
+            complete: function(request){
+              $('#faqs').effect('highlight');
+              },
+            url: '/faqs/sort'})
+          }
+        });
+      });
+  <% end %>
+<% end %>

@@ -20,44 +20,44 @@
 
 <!-- IMAGE GALLERY - end -->
 
-<% if @department.hours.any? %>
+<% if @department.dept_hours.any? %>
 <div>
   <span class="contact_title">Hours:</span>
-  <%= simple_format(@department.hours) %>
+  <%= simple_format(@department.dept_hours) %>
 </div>
 <% end %>
 
-<% if @department.phone.any? %>
+<% if @department.dept_phone.any? %>
 <div>
   <span class="contact_title">Phone:</span>
-  <%= simple_format(@department.phone) %>
+  <%= simple_format(@department.dept_phone) %>
 </div>
 <% end %>
 
-<% if @department.fax.any? %>
+<% if @department.dept_fax.any? %>
 <div>
   <span class="contact_title">Fax:</span>
-  <%= simple_format(@department.fax) %>
+  <%= simple_format(@department.dept_fax) %>
 </div>
 <% end %>
 
-<% if @department.email.any? %>
+<% if @department.dept_email.any? %>
 <div>
   <span class="contact_title">Email:</span>
-  <%= simple_format(@department.email) %>
+  <%= simple_format(@department.dept_email) %>
 </div>
 <% end %>
 
-<% if @department.location.any? %>
+<% if @department.dept_location.any? %>
 <div>
   <span class="contact_title">Location:</span>
-  <%= simple_format(@department.location) %>
+  <%= simple_format(@department.dept_location) %>
 </div>
 <% end %>
 
-<% if @department.mailing.any? %>
+<% if @department.dept_mailing.any? %>
 <div>
   <span class="contact_title">Mailing Address:</span>
-  <%= simple_format(@department.mailing) %>
+  <%= simple_format(@department.dept_mailing) %>
 </div>
 <% end %>

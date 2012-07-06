@@ -1,6 +1,14 @@
 class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.xml
+  
+  def sort
+  	params[:showcase_image].each_with_index do |id, index|
+  		ShowcaseImage.update_all(['position=?', index+1], ['id=?', id])
+   	end
+ 	render :nothing=>true
+  end
+  
   def index
     @department = Department.find(params[:department_id])
     @contacts = @department.contacts(:order=>:position)

@@ -11,7 +11,7 @@ class DepartmentsController < ApplicationController
   # GET /departments
   # GET /departments.xml
   def index
-    @departments = Department.all(:order=> "id", :conditions=>'id>10')
+    @departments = Department.all(:order=> "dept_name")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -23,7 +23,7 @@ class DepartmentsController < ApplicationController
   # GET /departments/1.xml
   def show
     @department = Department.find(params[:id])
-    @showpic = @department.logo_file_name
+    @showpic = @department.pic_file_name
     @faqs= @department.faqs.find(:all,:limit=>10, :order=>:position)
     @resources=@department.resources.find(:all,:limit=>10, :order=>:position)
     @contacts = Department.get_contacts(@department)
@@ -53,7 +53,7 @@ class DepartmentsController < ApplicationController
   def edit
     @department = Department.find(params[:id])
     @button_text = 'Update'
-    @showpic = @department.logo_file_name
+    @showpic = @department.pic_file_name
     @contacts = Department.get_contacts(@department)
   end
 
@@ -79,7 +79,7 @@ class DepartmentsController < ApplicationController
   def update
     @department = Department.find(params[:id])
     if params[:delete_image]
-    	@department.logo=nil
+    	@department.pic=nil
     end
 
     respond_to do |format|

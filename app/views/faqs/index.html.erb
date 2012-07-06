@@ -10,7 +10,7 @@
 <% if admin? %>
 	<br />
 	<%= link_to 'New FAQ', new_faq_path, :class => 'admin' %> 
-	<%= link_to 'FAQ Categories', faqs_categories_path, :class => 'admin' %>
+	<%= link_to 'FAQ Categories', faq_categories_path, :class => 'admin' %>
 <% end %>
 
 <% @faq_dept.each do |dept, @faqs| %>  

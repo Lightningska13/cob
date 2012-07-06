@@ -1,6 +1,40 @@
+<ol id="showcase_images">
+   <% @department.contacts.each do |contact| %>  
+	<li id="contact_<%= contact.id %>" class='showcase_images'>
+		<%= image_tag contact.photo.url(:small), :class => "photos move" %>
+	 	<%= link_to	'Edit', edit_department_contact_path(@department, contact.id), :class => 'foot' %>  
+		<%= link_to 'Delete', department_contact_path(@department, contact.id),
+	        :confirm => 'Are you sure?', :method => :delete, :class => 'foot'%>
+		<span class="caption" ><%= contact.firstname %> <%= contact.lastname %></span>
 
-<ol id="sortable_thumbs">
-	<%= render :partial=> 'sortable_contact', :collection => @contacts %>
+	</li>
+	<% end %>
 </ol>
 
-<%= sortable_element("sortable_thumbs", :url => sort_departments_path ) %>
+<% content_for :javascript  do %>
+  <%= javascript_tag do %>
+    // Sorting the list
+
+    $(document).ready(function(){
+      $('#department').sortable({
+        axis: 'y',
+        dropOnEmpty: false,
+        handle: '.photos',
+        cursor: 'move',
+        items: 'li',
+        opacity: 0.4,
+        scroll: true,
+        update: function(){
+          $.ajax({
+            type: 'post',
+            data: $('#contacts').sortable('serialize'),
+            dataType: 'script',
+            complete: function(request){
+              $('#contacts').effect('highlight');
+              },
+            url: '/departments/sort'})
+          }
+        });
+      });
+  <% end %>
+<% end %>

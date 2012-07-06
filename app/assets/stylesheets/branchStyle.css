@@ -20,15 +20,22 @@ nav img:hover {
 	background-position:top left;
 	background-repeat:repeat-y;
 	color: #FFFFFF;
+	font-size: 12px;
+}
+.contact_title {
+	font-size: 14px;
+	font-style: italic;
+	margin-left: 5px;
 }
 #middleCol {
 	float: left;
-	width: 360px;
+	width: 400px;
 	margin-top: -10px;
 	background-color: #FFFFFF;
 }
 #middleCol h1 {
-	margin:10px; padding:0;
+	margin:10px;
+	padding:0;
 	color:#003663;
 	font-size:x-large;
 	border-bottom:1px inset #ccc;
@@ -42,9 +49,13 @@ nav img:hover {
 }
 #rightCol {
 	float: left;
-	width: 250px;
+	width: 210px;
 	margin-top: -10px;
 	background-color: #FFFFFF;
+}
+footer {
+	font-size: x-small;
+	clear: both;
 }
 /* LOGIN */
 .login {

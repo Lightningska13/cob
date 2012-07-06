@@ -1,12 +1,11 @@
-<div id="subContent" class="sidebar contact">
+<div id="leftCol">
 	<%= render "sidebar" %>
 </div>
-
-<div id="centerCol">
-<h2 class="title">  <%=h @department.name %></h2>
+<div id="middleCol">
+<h2 class="title">  <%=h @department.dept_name %></h2>
 
     <% if @showpic %>
-	<div class="leftImageWrapper imgDept"><%= image_tag @department.logo.url(:medium) %> </div>
+	<div class="leftImageWrapper imgDept"><%= image_tag @department.pic.url(:medium) %> </div>
 	<% end %>
 <!-- ITEM_LIST -->
 <div class="item_list">
@@ -18,7 +17,7 @@
 		<% if @resources.any? %>
 		<h2 class="listDivider">Resources</h2>
 		<%= render 'resources/resource_list'%>
-		<p style="text-align:right;"><%= link_to 'view all ' + @department.name + ' resources', {:action=>:index, :controller=>:resources, :dept=>@department}, :class=>'foot' %></p>
+		<p style="text-align:right;"><%= link_to 'view all ' + @department.dept_name + ' resources', {:action=>:index, :controller=>:resources, :dept=>@department}, :class=>'foot' %></p>
 		<% end %>
 
 </div>
@@ -28,4 +27,6 @@
 
 
 <%= link_to 'Edit', edit_department_path(@department), :class=>"admin" if auth?(@department.id) %>
+</div>
+<div id="rightCol">
 </div>

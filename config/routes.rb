@@ -15,7 +15,18 @@ Cob::Application.routes.draw do
 
   resources "faqs"
 
-  resources "faqs_categories"
+  resources "faq_categories"
+  
+  resources "showcase_medias"
+  resources "showcase_images"
+  
+  resources :showcases do
+    collection do 
+      post :sort
+    end
+    resources :showcase_images
+    resources :showcase_medias
+  end
 
   	match 'login' => "user_sessions#new",      :as => :login
   	match 'logout' => "user_sessions#destroy", :as => :logout
