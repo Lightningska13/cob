@@ -1,6 +1,6 @@
-<div id="leftCol">
+<% content_for :leftCol do %>
 	<%= render "sidebar" %>
-</div>
+<% end %>
 <div id="middleCol">
 <h2 class="title">  <%=h @department.dept_name %></h2>
 

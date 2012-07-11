@@ -28,6 +28,9 @@ nav img:hover {
 	color: #FFFFFF;
 	font-size: 12px;
 }
+#leftCol div {
+	padding-left:5px;
+}
 #subContent {
 	background: #FFFFFF;
 }
