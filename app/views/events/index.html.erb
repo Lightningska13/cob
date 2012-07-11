@@ -1,17 +1,25 @@
 <div id="leftCol">
-	<div class="textHolder">
-		This is what goes on the left side of the page.
-	</div><!-- end textHolder -->
+	<div>
+	  <span class="contact_title">Branch County Courthouse</span><br />
+	  <p>31 Division St. <br />
+		 Coldwater, MI 49036</p>
+	</div>
+	<div>
+	  <span class="contact_title">Hours</span><br />
+	  <p>Monday - Friday <br />
+		 8:00am - 5:00pm</p>
+	</div>
+	<div>
+	  <span class="contact_title">Phone</span><br />
+	  <p>517.279.4300</p>
+	</div>
 	<div id="navHolder">
 	</div><!-- end navHolder -->
 </div><!-- end leftCol -->
-<div id="subContent" class="sidebar" style="margin-top:0;">
-<p><%= link_to "Events", events_path, :class => 'foot sidebar'%></p>
-<p><%= link_to "Announcements", events_path(:t=>'News'), :class => 'foot sidebar'%></p>
-</div>
-
-<div id="eventListing">
-<h1><%= @eventHeader %></h1>
+<div id="middleCol">
+	<div id="eventListing">
+		<h1><%= @eventHeader %></h1>
+			<p>| <%= link_to "News", events_path(:t=>'News') %> | <%= link_to "Events", events_path %> |</p>
 <% if admin? %>
 	<%= link_to 'New Event', new_event_path, :class => 'admin' %>
 <% end %>
@@ -37,5 +45,7 @@
 <%= link_to 'New Event', new_event_path, :class => 'admin' %>
 <% end %>
 </div>
+</div>
 <div id="rightCol">
+	<%= image_tag("/images/news.jpg") %>
 </div>

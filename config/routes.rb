@@ -11,6 +11,8 @@ Cob::Application.routes.draw do
   
   resources "resources"
   
+  resources "rescats"
+  
   resources "contact_us"
 
   resources "faqs"

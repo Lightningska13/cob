@@ -1,5 +1,8 @@
-<div id="centerCol">
+<div id="leftCol">
+</div>
+<div id="middleCol">
 <h1>Listing Resource Categories</h1>
+<%= link_to 'New Category', new_rescat_path, :class=>"admin" %> <%= link_to 'Resource List', resources_path, :class=>'admin' %>
 
 <table>
   <tr>
@@ -18,8 +21,6 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Category', new_rescat_path, :class=>"admin" %> <%= link_to 'Resource List', resources_path, :class=>'admin' %>
+</div>
+<div id="rightCol">
 </div>

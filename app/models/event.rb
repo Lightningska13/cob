@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
  	belongs_to :department
+ 	attr_accessible :event_type, :start_date, :end_date, :title, :blurb, :description, :url, :department_id
  	
   def	self.find_for_home(event_type,order)
    	if event_type

@@ -1,7 +1,18 @@
 <div id="leftCol">
-	<div class="textHolder">
-		This is what goes on the left side of the page.
-	</div><!-- end textHolder -->
+	<div>
+	  <span class="contact_title">Branch County Courthouse</span><br />
+	  <p>31 Division St. <br />
+		 Coldwater, MI 49036</p>
+	</div>
+	<div>
+	  <span class="contact_title">Hours</span><br />
+	  <p>Monday - Friday <br />
+		 8:00am - 5:00pm</p>
+	</div>
+	<div>
+	  <span class="contact_title">Phone</span><br />
+	  <p>517.279.4300</p>
+	</div>
 	<div id="navHolder">
 	</div><!-- end navHolder -->
 </div><!-- end leftCol -->
@@ -48,7 +59,12 @@
 	</div>
 </div><!-- end middleCol -->
 <div id="rightCol">
-			<a href="http://www.amlegal.com/nxt/gateway.dll/Michigan/marshall_mi/cityofmarshallmichigancodeofordinances?fn=altmain-nf.htm$f=templates$3.0&vid=amlegal:marshall_mi$anc=" target="_blank"><div style="background:url(/images/publishing.jpg) no-repeat top;margin-bottom:20px;width:150px;height:75px;">
+	<div class="contentBox1_holder">
+		<div class="contentBox1_head">
+			<div class="contentBox1_title">COUNTY SHOWCASE</div>
+		</div>
+		<div class="contentBox1_body">
+	<a href="http://www.amlegal.com/nxt/gateway.dll/Michigan/marshall_mi/cityofmarshallmichigancodeofordinances?fn=altmain-nf.htm$f=templates$3.0&vid=amlegal:marshall_mi$anc=" target="_blank"><div style="background:url(/images/publishing.jpg) no-repeat top;margin-bottom:20px;width:150px;height:75px;">
 			<!-- Begin eLocalLink Code :ml418vp5c-2411 -->
 			<script language="JavaScript" src="http://elocallink.tv/mlink/mlink.php?x=VWECNg9qA2o="></script>
 			<!-- End eLocalLink Code :twn918vp2 -->
@@ -57,5 +73,7 @@
 		<h2 class="deptDivider">Featured Resources</h2>
 		<div class="instructions"><%= @blurb %> </div>
 		 <%= render :partial => "resources/resource_list" %>
+	</div>
+		</div>
 	</div>
 </div><!-- end rightCol -->

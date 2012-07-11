@@ -1,19 +1,14 @@
-<div id="subContent" class="sidebar" style="margin-top:0;">
-<p><%= link_to "View All Events", events_path, :class => 'foot sidebar' %></p>
-<p><%= link_to "View All Announcements", events_path(:t=>'News'), :class => 'foot sidebar'%></p>
-
+<div id="leftCol">
 </div>
-<div id="centerCol">
-  <h2><%=h @event.title %></h2>
+<div id="middleCol">
+	<p><%= link_to "View All Events", events_path %> <%= link_to "View All Announcements", events_path(:t=>'News') %></p>
+  <h1><%=h @event.title %></h1>
+	<p>
+	  <i><%= @event.blurb %></i>
+	</p>
 <p class="list_date">
   <%=h @event.start_date.strftime("%A %B %e, %Y") %>  <%=h  " - " + @event.end_date.strftime("%A %B %e, %Y") if @event.end_date != @event.start_date %>
-
 </p>
-
-<p>
-  <i><%= @event.blurb %></i>
-</p>
-
 <div class="description">
   <%= @event.description %>
 </div>
@@ -27,7 +22,7 @@
 
 	<span class="list_date">
 
-		[<%= @event.department.name %>] </span> 
+		[<%= @event.department.dept_name %>] </span> 
 
 
 <% if admin? %>
@@ -35,5 +30,6 @@
 <%= link_to 'Edit', edit_event_path(@event), :class=>'admin' %> 
 <%= link_to 'Back', events_path(:t=>@event.event_type), :class=>'admin' %>
 <% end %>
-
-</div>	
+</div>
+<div id="rightCol">
+</div>

@@ -6,7 +6,7 @@ class ResourcesController < ApplicationController
   before_filter :instantiate_departments, :only => [:new, :edit, :create, :update]
   
   def instantiate_departments
-  	@departments = Department.find(:all, :order => 'name asc')
+  	@departments = Department.find(:all, :order => 'dept_name asc')
   	@page_title = "#{@current_action.titleize} Resources"
   end
 

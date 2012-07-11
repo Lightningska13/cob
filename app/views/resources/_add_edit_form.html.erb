@@ -1,13 +1,13 @@
-
 <%- content_for(:fck) do -%>
 	<%= javascript_include_tag 'changeContent.js' -%>
 <%- end -%>
-
+<div id="leftCol">
+</div>
+<div id="middleCol">
 <%= form_for([@resource], :html => { :multipart => true }) do |f| %>
 <% if @resource.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@resource.errors.count, "error") %> prohibited this event from being saved:</h2>
-
     <ul>
     <% @resource.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -64,6 +64,7 @@
 					 </div>  
 			 <% end %>
 			 </div>
+</div><!-- end middleCol -->
 			<div class="cat_list">
 			 <p> Select Departments</p>
 			 <% for department in Department.find(:all,:order=>"name asc") %>  
