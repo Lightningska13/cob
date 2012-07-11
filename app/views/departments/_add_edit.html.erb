@@ -1,3 +1,6 @@
+<div id="leftCol">
+</div>
+<div id="middleCol">
 <%= form_for(@department, :html => { :multipart => true }) do |f| %>
 <% if @department.errors.any? %>
   <div id="error_explanation">
@@ -9,7 +12,6 @@
     </ul>
   </div>
 <% end %>
-<div id="subContent">
    <% if @button_text == 'Update' %> 
    <div class="showcase_image_list">
     <h2 class="title">Contacts</h2>   
@@ -52,9 +54,6 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </p>
-</div>
-
-<div id="centerCol">
   <p>
     <% if @showpic %>
 	<%= image_tag @department.logo.url(:medium) %> <br />
@@ -67,6 +66,6 @@
   <p>
     <%= f.submit @button_text %>
   </p>
-</div>
-
 <% end %>
+<div id="rightCol">
+</div>

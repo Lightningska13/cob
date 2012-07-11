@@ -1,10 +1,10 @@
+<div id="leftCol">
+</div>
 <div id="subContent" class="sidebar" style="margin-top:0;">
-
 	<%= render 'dept_list' %>
-
 </div>
 
-<div id="centerCol">
+<div id="middleCol">
 <h1>How Do I ...</h1>
 
 <% if admin? %>
@@ -15,11 +15,10 @@
 
 <% @faq_dept.each do |dept, @faqs| %>  
 	<a name="<%= dept.id %>"></a>
- <h2 class="deptDivider description"><%= dept.name %></h2> 
+ <h2 class="deptDivider description"><%= dept.dept_name %></h2> 
  		<%= render :partial=>"faq_list" %>
- 		
-
 <% end %> 
-
+</div>
+<div id="rightCol">
 </div>
 

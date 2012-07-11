@@ -19,11 +19,11 @@
 	</div><!--endadminNav-->
 		<p style="color: #907757; margin-left:190px;"><%= flash[:notice] %></p>
 	<%= yield %>
+	</div><!-- end pageContent -->
+	<%= yield (:javascript) %>
 	<footer>
 		Copyright 2012 Branch County Coldwater, MI 49036 517.279.4300 <br />
 		<%= link_to "Aetistry", ('http://www.aetistry.com/'), :target => "_blank" %>
 	</footer>
-	</div><!-- end pageContent -->
-	<%= yield (:javascript) %>
 </body>
 </html>

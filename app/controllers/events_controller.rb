@@ -31,7 +31,7 @@ class EventsController < ApplicationController
    		mytype="event_type='Event'"
   		myorder='start_date asc'
 	    @page_title = "Events for Marshall, Mi"
-	    @eventHeader="Event Calendar"
+	    @eventHeader="Announcements/News"
  		end
  		
 	  @events = Event.find(:all, :order=>myorder, :conditions=>mytype + @mycondition)

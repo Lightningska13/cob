@@ -1,6 +1,6 @@
 <h3 class="title">Departments</h3>
 		<ul>
 		<% @faq_dept.each do |dept, faqs| %>
-			<li><%= link_to dept.name, faqs_path(:anchor=>dept) %></li>
+			<li><%= link_to dept.dept_name, faqs_path(:anchor=>dept) %></li>
 		<% end %>
 		</ul>
