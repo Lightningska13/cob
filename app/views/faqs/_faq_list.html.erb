@@ -1,6 +1,6 @@
    <ul id="faqs" style="list-style:url('/images/dash.png')">
    <% @faqs.each do |faq| %>  
-    <li id="faq_<%= faq.id %>"><%= image_tag("golddot.png") if (faq.featured and admin?)%><%= link_to faq.question, faq %>
+    <li id="faq_<%= faq.id %>"><%= image_tag("golddot.png") if (faq.featured and admin?)%> <%= link_to faq.question, faq %>
 		  <% if admin? %>
 			<br /><span class="handle" style="<%= @cursor_style %>">DRAG</span>
 			<%= link_to	'Edit', edit_faq_path(faq), :class => 'admin' %>  

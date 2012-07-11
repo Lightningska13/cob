@@ -1,9 +1,11 @@
 /* CSS Document */
 body {
 	background-color: #CCCCCC;
+	margin: auto;
 }
 #pageContent {
 	background-color: #FFFFFF;
+	margin: auto;
 }
 nav {
 	margin-left: 155px;
@@ -198,6 +200,9 @@ footer {
 #eventListing p {
 	font-size: x-small;
 	padding-left: 20px;
+}
+#eventListing span {
+	color: #63045d;
 }
 .eventItem {
 	font-size: 90%;

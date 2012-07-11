@@ -28,8 +28,8 @@
  <h2 class="deptDivider"><%= month.strftime("%B %Y") %></h2>  
    <dl>
    <% events.each do |event| %>  
-    <dt <%="class='#{event.event_type}'"-%>><%= link_to event.title, event %> <span><%= event.start_date.to_date.to_s(:long) %></span></dt>
-    <dd><%=h event.blurb %></dd>
+    <dt <%="class='#{event.event_type}'"-%>><span><%= event.start_date.to_date.to_s(:long) %></span> - <%= link_to event.title, event %></dt>
+    <div class="eventBlurb"><%=h event.blurb %></div><br />
       <% if admin? %>
 				<dd><%= link_to	'Edit', edit_event_path(event), :class => 'admin' %>  
 				<%= link_to 'Delete', event, :confirm => 'Are you sure?', :method => :delete, :class => 'admin'%>
