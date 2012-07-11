@@ -1,27 +1,9 @@
-<%- content_for(:fck) do -%>
-	<%= javascript_include_tag :fckeditor %>
-<%- end -%>
 <div id="leftCol">
 </div>
-<div id="middleCol">
-<h1>Editing Resource Category</h1>
+<div>
+<h1>New Resource Category</h1>
 
-<%= form_for(@rescat) do |f| %>
-  <p>
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
-  </p>
-  <p>
-    <%= f.label :blurb %><br />
-	<%= f.text_area :blurb, :rows => 4, :cols => 40 %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-
-<% end %>
-
+<%= render 'form' %>
+<br /><br />
 <%= link_to 'Cancel', rescats_path, :class=>"admin" %>
-</div>
-<div id="rightCol">
 </div>

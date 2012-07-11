@@ -1,6 +1,10 @@
-<h1>Editing Resource</h1>
-<div id="centerCol">
+<div id="leftCol">
+</div>
+<div>
+<h1>Editing resource</h1>
 
-<%= render :partial => 'add_edit_form'%>
-<%= link_to 'Cancel', resources_path(:cat => params[:cat]), :class=>'admin' %>
+<%= render 'form' %>
+
+
+<%= link_to 'Cancel', resources_path, :class => 'admin' %>
 </div>

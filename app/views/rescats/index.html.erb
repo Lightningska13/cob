@@ -1,8 +1,7 @@
-<div id="leftCol">
+<div id='leftCol'>
 </div>
-<div id="middleCol">
+<div id="mainContent">
 <h1>Listing Resource Categories</h1>
-<%= link_to 'New Category', new_rescat_path, :class=>"admin" %> <%= link_to 'Resource List', resources_path, :class=>'admin' %>
 
 <table>
   <tr>
@@ -15,12 +14,14 @@
 <% @rescats.each do |rescat| %>
   <tr class="<%= cycle('even', 'odd') %>">
     <td><%= link_to 'Edit', edit_rescat_path(rescat), :class=>"admin" %></td>
-    <td><%= link_to 'Destroy', rescat, :confirm => 'Are you sure?', :method => :delete, :class=>"admin" %></td>
+    <td><%= link_to 'Delete', rescat, :confirm => 'Are you sure?', :method => :delete, :class=>"admin" %></td>
     <td><%=h rescat.category %></td>
     <td class='instructions'><%= rescat.blurb %></td>
   </tr>
 <% end %>
 </table>
-</div>
-<div id="rightCol">
+
+<br />
+
+<%= link_to 'New Category', new_rescat_path, :class=>"admin" %> <%= link_to 'Resource List', resources_path, :class=>'admin' %>
 </div>

@@ -72,6 +72,9 @@ GEM
       cocaine (>= 0.0.2)
       mime-types
     pg (0.12.2)
+    pg_search (0.5)
+      activerecord (>= 3)
+      activesupport (>= 3)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -131,6 +134,7 @@ DEPENDENCIES
   kaminari
   paperclip (~> 2.7)
   pg (= 0.12.2)
+  pg_search
   rails (= 3.2.6)
   sass-rails (~> 3.2.3)
   sqlite3

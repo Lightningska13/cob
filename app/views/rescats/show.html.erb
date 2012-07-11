@@ -1,16 +1,17 @@
-<div id="centerCol">
+<div id="leftCol">
+</div>
+<div>
 <p>
   <b>Category:</b>
-  <%=h @rescat.category %>
+  <%= @rescat.category %>
 </p>
 
 <p>
   <b>Blurb:</b>
-  <%=h @rescat.blurb %>
+  <%= @rescat.blurb %>
 </p>
 
 
-<%= link_to 'Edit', edit_rescat_path(@rescat) %> |
-<%= link_to 'Back', rescats_path %>
-
+<%= link_to 'Edit', edit_rescat_path(@rescat), :class => "admin" %> 
+<%= link_to 'Back', rescats_path, :class => "admin" %>
 </div>

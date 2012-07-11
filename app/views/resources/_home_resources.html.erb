@@ -1,0 +1,18 @@
+		 <dl id="resources" class="resourceList homelist">
+		<% @resources.each do |resource| %>  
+			<div  id="resource_<%= resource.id %>">
+				<% if resource.resource_type == 'Document' %>
+					<dt class="<%= get_icon(resource.res_content_type) %>"><%= link_to resource.title, resource.res.url, :title => "Download #{resource.res_file_name} ~#{resource.res_file_size/1000} KB", :target => '_blank' %></dt>
+				<% elsif resource.resource_type == 'Link' %>
+					<dt class="link" id="item_<%= resource.id %>"><%= link_to resource.title, format_url(resource.res_file_name), :target => '_blank' %></dt>
+				<% else %>
+					<dt class="page" id="item_<%= resource.id %>"><%= link_to resource.title, resource_path(resource) %></dt>			
+				<% end %>
+				<% if admin? %>
+					<dd> <%= link_to	'Edit', edit_resource_path(resource), :class => 'admin' %>  
+					<%= link_to 'Delete', resource, :confirm => 'Are you sure?', :method => :delete, :class => 'admin'%></dd>
+				<% end %>
+			</div>
+
+		<% end %>
+		</dl>

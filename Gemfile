@@ -31,7 +31,7 @@ gem 'paperclip', '~>2.7'
 gem 'ckeditor', '3.7.1'
 gem 'kaminari'
 gem 'acts_as_list'
-
+gem 'pg_search'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
