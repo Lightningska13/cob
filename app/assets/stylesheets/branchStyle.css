@@ -15,6 +15,10 @@ nav img {
 nav img:hover {
 	opacity: .9;
 }
+#pageContent {
+	background:#ffffff;
+	width:760px;
+}
 #leftCol {
 	float: left;
 	width: 150px;
@@ -41,7 +45,7 @@ nav img:hover {
 	max-height: none;
 	margin-top: -10px;
 }
-#middleCol h1 {
+h1 {
 	margin:10px;
 	padding:0;
 	color:#003663;
@@ -229,3 +233,18 @@ footer {
 	text-decoration: underline;
 	font-size: 90%;
 }
+
+a.admin {
+	background-color:#EEEEEE;
+	color:black;
+	font-weight:bold;
+	border:1px outset;
+	padding:2px;
+	font-size:xx-small;
+	text-decoration:none;
+	}
+a.admin:hover {
+	background-color:#FFF;
+	border:1px inset;
+	text-decoration:none;
+	}

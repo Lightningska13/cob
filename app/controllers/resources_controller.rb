@@ -7,6 +7,7 @@ class ResourcesController < ApplicationController
   
   def instantiate_departments
   	@departments = Department.find(:all, :order => 'dept_name asc')
+  	@rescats = Rescat.order('category asc')
   	@page_title = "#{@current_action.titleize} Resources"
   end
 
@@ -29,18 +30,12 @@ class ResourcesController < ApplicationController
  	    @page_title= @page_title + @title_text 
   	elsif params[:dept]
   		@dept = Department.find(params[:dept])
-	    @resources = @dept.resources.find(:all,:order=>"title")
-	    @title_text= @dept.name
+	    @resources = @dept.resources.order(:position)
+	    @title_text= @dept.dept_name
   	  @blurb= (@resources.size == 1 ? "There is 1 result." : "There are #{@resources.size} results.")
  	    @page_title= @page_title + @title_text 
-  	elsif params[:showmin] #show minutes for the council
-  		@dept = Department.find(params[:showmin])
-	    @resources = @dept.resources.find(:all, :include=>:rescats, :conditions=>'rescats.id=2', :order=>'resources.position desc')
-	    @title_text= @dept.name + ' Minutes'
-  	  @blurb= (@resources.size == 1 ? "There is 1 result." : "There are #{@resources.size} results.")
- 	    @page_title= @page_title + @title_text 
- 		elsif params[:search] and (params[:search] != "")
-	  	@resources = Resource.search(params[:search])
+ 		elsif params[:query] and (params[:query] != "")
+	  	@resources = Resource.text_search(params[:query])
 	    @title_text='Search Results'
   	  @blurb= (@resources.size == 1 ? "There is 1 result." : "There are #{@resources.size} results.")
  		elsif params[:all]
@@ -48,13 +43,13 @@ class ResourcesController < ApplicationController
 	    @title_text='Uncategorized'
   	  @blurb= "These are NOT visible to the public by browsing, but will show up in a keyword search. They must be assigned to a category in order to be browsed."
  	  else
-	    @resources = Resource.find(:all, :conditions => ['featured = ?',true], :order=>'position ASC')
+	    @resources = Resource.featured.order(:position)
 	    @title_text='Featured Resources'
  	    @blurb=''
     end
     
 
-    @rescats = Rescat.find(:all, :order=>"category")
+    @rescats = Rescat.order('category asc')
     if admin?
     	@cursor_style = 'cursor:move;' # show drag cursor on sortable list
     end

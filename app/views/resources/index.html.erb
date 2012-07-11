@@ -1,23 +1,40 @@
-<div id="leftCol">
-	<div class="textHolder">
-		This is what goes on the left side of the page.
-	</div><!-- end textHolder -->
-	<div id="navHolder">
-	</div><!-- end navHolder -->
-</div><!-- end leftCol -->
-<div id="middleCol" class="sidebar" style="margin-top:0;">
-	<h1>External Resources</h1>
-		<h2>Listed by Category</h2>
-		<%= link_to 'New Resources', new_resource_path, :class=>"admin" %>
-		<ul>
-		<% @rescats.each do |cat| %>
-			<% unless cat.resources.empty? %>
-			<li><%= link_to cat.category, :action=>:index, :controller=>:resources, :cat=>cat %></li>
-			<% end %>
-		<% end %>
-		</ul>
-	<p><%= link_to 'View Uncategorized', {:action=>:index, :controller=>:resources, :all=>1},:class => 'admin' if admin? %></p>
-</div>
-<div id="rightCol">
+<div id='leftCol'>
 </div>
 
+<div id="middleCol">
+<h1>Resources</h1>
+<% if admin? %>
+	<%= link_to 'New Resource', new_resource_path, :class => 'admin' %> 
+	<%= link_to 'Categories', rescats_path, :class => 'admin' %>
+<% end %>
+	<div>
+		<%= form_tag resources_path, :method => 'get' do %>
+	  <p>
+	    <label class="instructions"> Keyword Search</label><br />
+	    <%= text_field_tag :query, params[:query] %>
+	    <%= submit_tag "Search", :name => nil %>
+	  </p>
+		<% end %>
+		<p class="instructions">Enter a search term, such as <tt><big>permit</biG></tt> or <tt><big>schedule</biG></tt>
+		</p>
+	</div>
+
+	<h2 class="deptDivider"><%= @title_text %></h2>
+	<div class="instructions"><%== @blurb %> </div>
+	 <%= render :partial => "resource_list" %>
+</div>
+
+<div id="rightCol" style="margin-top:0;">
+	<p><%= link_to "View Featured", resources_path, :class => 'foot sidebar'%></p>
+
+	<h3 class="title">Resource Categories</h3>
+	<span class="instructions">Click to Browse by Category</span>
+			<ul class="pineapple">
+			<% @rescats.each do |cat| %>
+				<% unless cat.resources.empty? %>
+				<li><%= link_to cat.category, :action=>:index, :controller=>:resources, :cat=>cat %></li>
+				<% end %>
+			<% end %>
+			</ul>
+		<p><%= link_to 'View Uncategorized', {:action=>:index, :controller=>:resources, :all=>1},:class => 'admin' if admin? %></p>
+</div>

@@ -1,0 +1,30 @@
+<%- content_for(:fck) do -%>
+	<%= javascript_include_tag :ckeditor %>
+<%- end -%>
+<div id="mainContent">
+<%= form_for(@rescat) do |f| %>
+  <% if @rescat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rescat.errors.count, "error") %> prohibited this rescat from being saved:</h2>
+
+      <ul>
+      <% @rescat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category, :autofocus => 'autofocus' %>
+  </div>
+  <div class="field">
+    <%= f.label :blurb %><br />
+	<%= f.cktext_area :blurb, :toolbar => 'Format', :width => '50%', :height => '100px' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
