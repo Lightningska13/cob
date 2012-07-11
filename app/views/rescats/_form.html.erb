@@ -1,10 +1,3 @@
-<%- content_for(:fck) do -%>
-	<%= javascript_include_tag :ckeditor %>
-<%- end -%>
-<div id="leftCol">
-</div>
-<div id="middleCol">
-	<h1>Editing Resource Category</h1>
 <%= form_for(@rescat) do |f| %>
   <% if @rescat.errors.any? %>
     <div id="error_explanation">

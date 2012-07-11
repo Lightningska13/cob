@@ -15,8 +15,11 @@
 		<%= render "/layouts/main_nav" %>
 	</nav><!--endmainNav-->
 	<div id="adminNav">
-	<%= render "/layouts/admin_nav" if admin? %>
+		<%= render "/layouts/admin_nav" if admin? %>
 	</div><!--endadminNav-->
+	<div id="leftCol">
+		<%= content_for?(:leftCol) ? yield(:leftCol) : render("/layouts/boilerplate") %>
+	</div>
 		<p style="color: #907757; margin-left:190px;"><%= flash[:notice] %></p>
 	<%= yield %>
 	<br clear="both" /></div><!-- end pageContent -->
