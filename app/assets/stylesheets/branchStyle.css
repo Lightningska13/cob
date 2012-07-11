@@ -2,6 +2,9 @@
 body {
 	background-color: #CCCCCC;
 }
+#pageContent {
+	background-color: #FFFFFF;
+}
 nav {
 	margin-left: 155px;
 	margin-top: -56px;
@@ -37,28 +40,47 @@ nav img:hover {
 	min-height: 500px;
 	max-height: none;
 	margin-top: -10px;
-	background-color: #FFFFFF;
 }
 #middleCol h1 {
 	margin:10px;
 	padding:0;
 	color:#003663;
 	font-size: large;
-	border-bottom:1px inset #ccc;
 }
-#middleCol h2 {
-	margin:20px 10px 0 10px; padding:0;
+#middleCol ul li a {
+	color: #003663;
+	text-decoration: none;
+	font-size: 90%;
+}
+#middleCol ul li a:hover {
+	color: #003663;
+	text-decoration: underline;
+	font-size: 90%;
+}
+.pageHeader {
+	margin:10px;
+	padding:0;
 	color:#003663;
-	font-size:large;	
-	/*border-top:1px inset #ccc;*/
-	line-height:1.5em;
+	font-size: x-large;
+	font-style: bold;
+	border-bottom:1px inset #ccc;
 }
 #rightCol {
 	float: left;
 	width: 240px;
 	min-height: 500px;
 	max-height: none;
-	background-color: #FFFFFF;
+}
+.foot {
+	color: #B2B2B2;
+	font-size: x-small;
+	text-decoration: none;
+	padding-left: 10px;
+}
+.foot:hover {
+	color: #B2B2B2;
+	font-size: x-small;
+	text-decoration: underline;
 }
 footer {
 	font-size: x-small;
@@ -120,7 +142,8 @@ footer {
 			}
 			
 		.contentBox1_foot {
-			margin:0px; padding:0px;
+			margin:0px;
+			padding:0px;
 			height:30px;
 			background-image:url('/assets/boxParts/contentBox1_foot.png');
 			background-position:bottom center;
@@ -167,9 +190,23 @@ footer {
 /**************************************************************
 ...contentBox2...END
 **************************************************************/
-/*EventListing*/
+/*Events*/
 #eventListing p {
 	font-size: x-small;
+	padding-left: 20px;
+}
+.eventItem {
+	font-size: 90%;
+	padding-left: 20px;
+}
+.eventItem a {
+	color: #003663;
+	text-decoration: none;
+}
+.eventBlurb {
+	color: #999999;
+	font-style: italic;
+	font-size: 70%;
 	padding-left: 20px;
 }
 /*Resources*/
@@ -177,4 +214,18 @@ footer {
 	font-size: small;
 	color: #63045d;
 }
-
+/*FAQS*/
+#faqs {
+}
+#faqs li {
+}
+#faqs a {
+	color: #003663;
+	text-decoration: none;
+	font-size: 90%;
+}
+#faqs a:hover {
+	color: #003663;
+	text-decoration: underline;
+	font-size: 90%;
+}

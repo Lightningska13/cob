@@ -17,15 +17,15 @@
 	</div><!-- end navHolder -->
 </div><!-- end leftCol -->
 <div id="middleCol">
-	<h1>Welcome to Branch County</h1>
-	<h2>Common Solutions</h2> 
+	<div class="pageHeader">Welcome to Branch County</div>
+	<h1>Common Solutions</h1> 
 	<%= render :partial => "faqs/faq_list" %>
 		<% if @news.size>0 %>
-		<h2>Announcements</h2> 
-			 <dl>
+		<%= link_to "View All FAQs...", faqs_path, :class=>'foot' %>
+		<h1>Announcements</h1> 
+			 <ul>
 			 <% @news.each do |news| %>  
-				<dt><%= link_to news.title, news %><!-- <span class="list_date"><%= news.start_date.to_date.to_s(:long) %></span>--></dt>
-				<dd class="instructions"><%=h news.blurb %></dd>
+				<li><%= link_to news.title, news %></li>
 					<% if admin? %>
 						<dd><%= link_to	'Edit', edit_event_path(news), :class => 'admin' %>  
 						<%= link_to 'Delete', news, :confirm => 'Are you sure?', :method => :delete, :class => 'admin'%>
@@ -33,30 +33,20 @@
 					<% end %>
 
 			<% end %>  
-			</dl>
+			</ul>
 			<div><%= link_to "View All Announcements...", events_path(:t=>'News'), :class=>'foot' %></div>
 	<% end %>
-	<div class="featureBox">
-		<h2>Upcoming Events</h2>
-		<div class="content eventList fbc4">		
+		<h1>Upcoming Events</h1>		
 			<% @events.each do |event| %>
 			<div class="eventItem <%= cycle('odd','even') %>">
 				<a href="events/<%= event.id %>">
-				<div class="eventDate">
-					<div class="eventDay"><%= event.start_date.strftime("%e") %></div>
-					<div class="eventMonth"><%= event.start_date.strftime("%b") %></div>
-				</div>
-				<div class="eventBlurb">
-					<div class="eventTitle instructions"><%= event.title %></div>
-					<div class="eventDesc"><%= event.blurb %></div>
-				</div>
+<%= event.start_date.to_date.to_s(:long) %> - <%= event.title %><br />
+					<div class="eventBlurb"><%= event.blurb %></div><br />
 				</a>
 			</div> <!-- eventItem -->
 			<% end %>
-		</div>
-		<div class="bottom fbb4"><div><%= link_to "View All Events...", events_path %></div>
-		</div>
-	</div>
+		<div><%= link_to "View All Events...", events_path, :class=>'foot' %></div>
+
 </div><!-- end middleCol -->
 <div id="rightCol">
 	<div class="contentBox1_holder">
@@ -67,8 +57,7 @@
 	<a href="http://www.amlegal.com/nxt/gateway.dll/Michigan/marshall_mi/cityofmarshallmichigancodeofordinances?fn=altmain-nf.htm$f=templates$3.0&vid=amlegal:marshall_mi$anc=" target="_blank"><div style="background:url(/images/publishing.jpg) no-repeat top;margin-bottom:20px;width:150px;height:75px;">
 			<!-- Begin eLocalLink Code :ml418vp5c-2411 -->
 			<script language="JavaScript" src="http://elocallink.tv/mlink/mlink.php?x=VWECNg9qA2o="></script>
-			<!-- End eLocalLink Code :twn918vp2 -->
-			<div class="instructions" style="width:150px;margin-top:30px;text-align:center;"><%= link_to image_tag("acroreader.png", :border=>'none'), 'http://get.adobe.com/reader/', :target=>'_blank' %><br />Many documents posted here are PDFs. You can download the free PDF reader from Adobe.</div>
+			<!-- End eLocalLink Code :twn918vp2 --><%= link_to image_tag("acroreader.png", :border=>'none'), 'http://get.adobe.com/reader/', :target=>'_blank' %><br />Many documents posted here are PDFs. You can download the free PDF reader from Adobe.
 	<div class="homeCenter">
 		<h2 class="deptDivider">Featured Resources</h2>
 		<div class="instructions"><%= @blurb %> </div>
