@@ -1,0 +1,81 @@
+/*************************************
+*  Resources           *
+**************************************/
+dl.resourceList {
+	margin-left:5px;
+	}
+
+dl.homelist{
+	font-size:.9em;
+}
+	
+dl.resourceList dt {
+	margin-top:8px;
+}	
+div.facetList dl.resourceList dt a{
+	font-size:.9em;
+}	
+dl.resourceList dt.doc a{
+		background:url('/assets/news_icon_sm.gif') no-repeat top left;
+		padding-left:25px;
+	}
+dl.resourceList dt.pdf a{
+		background:url('/assets/pdf.gif') no-repeat top left;
+		padding-left:25px;
+	}
+dl.resourceList dt.word a{
+		background:url('/assets/doc.gif') no-repeat top left;
+		padding-left:25px;
+	}
+dl.resourceList dt.excel a{
+		background:url('/assets/xls.gif') no-repeat top left;
+		padding-left:25px;
+	}
+dl.resourceList dt.link a{
+		background:url('/assets/link.png') no-repeat top left;
+		padding-left:25px;
+	}
+dl.resourceList dt.page a{
+		background:url('/assets/page.png') no-repeat top left;
+		padding-left:25px;
+	}
+
+dl.homelist dt.doc a{
+		background:url('/assets/news_icon_sm.gif') no-repeat top left;
+		padding-left:25px;
+	}
+dl.homelist dt.pdf a{
+		background:url('/assets/pdf_sm.png') no-repeat top left;
+		padding-left:25px;
+	}
+dl.homelist dt.word a{
+		background:url('/assets/doc.gif') no-repeat top left;
+		padding-left:25px;
+	}
+dl.homelist dt.excel a{
+		background:url('/assets/xls.gif') no-repeat top left;
+		padding-left:25px;
+	}
+dl.homelist dt.link a{
+		background:url('/assets/link.png') no-repeat top left;
+		padding-left:25px;
+	}
+dl.homelist dt.page a{
+		background:url('/assets/page.png') no-repeat top left;
+		padding-left:25px;
+	}
+dl.resourceList  dd {
+	font-size:x-small;
+	/*color:#630434;*/
+	color:#737161;
+	margin-left:25px;
+	}
+	dl.resourceList  dd p,dl.refdocs dd div {
+	margin:0;
+	padding:0;
+}
+
+div.cat_list {
+	float:left;
+	margin-right:20px;
+	}
