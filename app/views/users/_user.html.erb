@@ -1,4 +1,7 @@
-<div id="centerCol">
+<div id="leftCol">
+</div>
+<div id="middleCol">
+	<h1> New User</h1> 
 <%= form_for @user do |form| %>  
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -41,7 +44,7 @@
 			 <% for department in Department.find(:all,:order=>"id asc") %>  
 					 <div>  
 						 <label><%= check_box_tag "user[department_ids][]", department.id, @user.departments.include?(department) %>  
-						 <%= department.name %>  </label>
+						 <%= department.dept_name %>  </label>
 					 </div>  
 			 <% end %>
 			</div>
