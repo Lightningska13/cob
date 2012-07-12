@@ -1,5 +1,6 @@
-<div id="middleCol">
+
 <%= form_for(@department, :html => { :multipart => true }) do |f| %>
+<div id="middleCol" >
 <% if @department.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@department.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -10,48 +11,10 @@
     </ul>
   </div>
 <% end %>
-   <% if @button_text == 'Update' %> 
-   <div class="showcase_image_list">
-    <h2 class="title">Contacts</h2>   
-	<span class="instructions">Drag contacts to reorder them</span>
-    <%= render :partial => 'contact_draggable'%>
-    
-  </div>
-  <% else %>
-  	<span class="instructions"> Add Contacts after creating Department</span>
-  <% end %> 
-  <p>
-    <%= f.label :dept_name %><br />
-    <%= f.text_field :dept_name %>
-  </p>
-  <p>
-    <%= f.label :dept_hours %><br />
-    <%= f.text_area :dept_hours, :rows=>3, :cols=>20 %>
-  </p>
-  <p>
-    <%= f.label :dept_phone %><br />
-    <%= f.text_area :dept_phone, :rows=>3, :cols=>20 %>
-  </p>
-  <p>
-    <%= f.label :dept_fax %><br />
-    <%= f.text_area :dept_fax, :rows=>3, :cols=>20 %>
-  </p>
-  <p>
-    <%= f.label :dept_email %><br />
-    <%= f.text_field :dept_email %>
-  </p>
-  <p>
-    <%= f.label :dept_location %><br />
-    <%= f.text_area :dept_location, :rows=>3, :cols=>20 %>
-  </p>
-  <p>
-    <%= f.label :dept_mailing %><br />
-    <%= f.text_area :dept_mailing, :rows=>3, :cols=>20 %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
+<p>
+  <%= f.label :dept_name %><br />
+  <%= f.text_field :dept_name, :size => '60', :autofocus => 'autofocus' %>
+</p>
   <p>
     <% if @showpic %>
 	<%= image_tag @department.logo.url(:medium) %> <br />
@@ -61,9 +24,50 @@
       <%= f.label :logo %>  
       <%= f.file_field :logo %>  
   </p>
-  <p>
+   <p>
+    <%= f.label :description %><br />
+    <%= f.cktext_area :description, :toolbar=>'Easy', :width=>'360px', :height=>'200px' %>  
+  </p>
+ <p>
     <%= f.submit @button_text %>
   </p>
-<% end %>
-<div id="rightCol">
 </div>
+<div id="rightCol">
+	<div style="padding-left:10px;">
+	   <% if @button_text == 'Update' %> 
+	   <div class="showcase_image_list">
+	    <h2 class="title">Contacts</h2>   
+		<span class="instructions">Drag contacts to reorder them</span>
+	    <%= render :partial => 'contact_draggable'%>
+
+	  </div>
+	  <% else %>
+	  	<span class="instructions"> Add Contacts after creating Department</span>
+	  <% end %> 
+	  <p>
+	    <%= f.label :dept_hours %><br />
+	    <%= f.text_area :dept_hours, :rows=>3, :cols=>20 %>
+	  </p>
+	  <p>
+	    <%= f.label :dept_phone %><br />
+	    <%= f.text_area :dept_phone, :rows=>3, :cols=>20 %>
+	  </p>
+	  <p>
+	    <%= f.label :dept_fax %><br />
+	    <%= f.text_area :dept_fax, :rows=>3, :cols=>20 %>
+	  </p>
+	  <p>
+	    <%= f.label :dept_email %><br />
+	    <%= f.text_field :dept_email %>
+	  </p>
+	  <p>
+	    <%= f.label :dept_location %><br />
+	    <%= f.text_area :dept_location, :rows=>3, :cols=>20 %>
+	  </p>
+	  <p>
+	    <%= f.label :dept_mailing %><br />
+	    <%= f.text_area :dept_mailing, :rows=>3, :cols=>20 %>
+	  </p>
+	</div>
+</div>
+<% end %>

@@ -4,8 +4,9 @@ body {
 	margin: auto;
 }
 #pageContent {
-	background-color: #FFFFFF;
+	background: #FFFFFF url('/assets/background.png') repeat-y;
 	margin: auto;
+	width:760px;
 }
 nav {
 	margin-left: 155px;
@@ -17,21 +18,20 @@ nav img {
 nav img:hover {
 	opacity: .9;
 }
-#pageContent {
-	background:#ffffff;
-	width:760px;
-}
 #leftCol {
 	float: left;
 	width: 150px;
-	min-height: 500px;
+	color: #FFFFFF;
+	font-size: 12px;
+	margin-top:10px;
+/*	min-height: 500px;
 	max-height: none;
+	height:100%;
 	background-color: #003663;
 	background-image: url('/assets/bg/navRepeater.png');
 	background-position:top left;
-	background-repeat:repeat-y;
-	color: #FFFFFF;
-	font-size: 12px;
+	background-repeat:repeat-y;*/
+	
 }
 #leftCol div {
 	padding-left:5px;
@@ -82,18 +82,21 @@ h1 {
 }
 .foot {
 	color: #B2B2B2;
+	color: gray;
 	font-size: x-small;
 	text-decoration: none;
 	padding-left: 10px;
 }
 .foot:hover {
-	color: #B2B2B2;
+	color: red;
 	font-size: x-small;
 	text-decoration: underline;
 }
 footer {
 	font-size: x-small;
 	clear: both;
+	text-align:center;
+	margin-top:10px;
 }
 /* LOGIN */
 .login {
