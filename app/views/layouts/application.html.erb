@@ -8,15 +8,15 @@
 </head>
 <body>
 	<div id="pageContent" class="pageshadow">
-		<header>
+		<header class="main">
 			<%= image_tag("/assets/header/header1.png") %>
 		</header>
-		<nav>
+		<nav id="main">
 			<%= render "/layouts/main_nav" %>
 		</nav><!--endmainNav-->
-		<div id="adminNav">
-			<%= render "/layouts/admin_nav" if admin? %>
-		</div><!--endadminNav-->
+		<% if admin? %>
+			<div id="adminNav"><%= render "/layouts/admin_nav" %></div>
+		<% end %><!--endadminNav-->
 		<div id="leftCol">
 			<%= content_for?(:leftCol) ? yield(:leftCol) : render("/layouts/boilerplate") %>
 		</div>

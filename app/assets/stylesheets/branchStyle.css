@@ -1,29 +1,32 @@
 /* CSS Document */
 body {
 	background-color: #CCCCCC;
-	margin: auto;
+	margin: 0;
 }
 #pageContent {
 	background: #FFFFFF url('/assets/background.png') repeat-y;
 	margin: auto;
 	width:760px;
+	position:relative;
 }
-nav {
-	margin-left: 155px;
-	margin-top: -56px;
+nav#main {
+	position:absolute;
+	left: 0px;
+	top: 137px;
 }
-nav img {
-	margin-left: -5px;
-}
-nav img:hover {
+
+nav#main img:hover {
 	opacity: .9;
+}
+header.main {
+	width:760px;
+	height:131px;
 }
 #leftCol {
 	float: left;
 	width: 150px;
 	color: #FFFFFF;
 	font-size: 12px;
-	margin-top:10px;
 /*	min-height: 500px;
 	max-height: none;
 	height:100%;
@@ -48,7 +51,7 @@ nav img:hover {
 	width: 370px;
 	min-height: 500px;
 	max-height: none;
-	margin-top: -10px;
+
 }
 h1 {
 	margin:10px;
