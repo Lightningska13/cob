@@ -2,10 +2,10 @@
 	<%= render "sidebar" %>
 <% end %>
 <div id="middleCol">
-<h2 class="title">  <%=h @department.dept_name %></h2>
+<div class="pageHeader">  <%= @department.dept_name %></div>
 
     <% if @showpic %>
-	<div class="leftImageWrapper imgDept"><%= image_tag @department.pic.url(:medium) %> </div>
+	<div class="leftImageWrapper imgDept"><%= image_tag @department.logo.url(:medium) %> </div>
 	<% end %>
 <!-- ITEM_LIST -->
 <div class="item_list">
@@ -22,7 +22,7 @@
 
 </div>
 <div class="description">
-  <%= @department.description %>
+  <%== @department.description %>
 </div>
 
 

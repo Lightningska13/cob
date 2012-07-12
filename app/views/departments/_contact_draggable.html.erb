@@ -1,12 +1,14 @@
-<ol id="showcase_images">
-   <% @department.contacts.each do |contact| %>  
+<ol id="contacts">
+   <% @contacts.each do |contact| %>  
 	<li id="contact_<%= contact.id %>" class='showcase_images'>
-		<%= image_tag contact.photo.url(:small), :class => "photos move" %>
-	 	<%= link_to	'Edit', edit_department_contact_path(@department, contact.id), :class => 'foot' %>  
+		<span class="handle" style="<%= @cursor_style %>">
+		<%= image_tag contact.photo.url(:small), :class => "photos move" if contact.photo_file_name %>
+	 	
+	<%= link_to	'Edit', edit_department_contact_path(@department, contact.id), :class => 'foot' %>  
 		<%= link_to 'Delete', department_contact_path(@department, contact.id),
 	        :confirm => 'Are you sure?', :method => :delete, :class => 'foot'%>
-		<span class="caption" ><%= contact.firstname %> <%= contact.lastname %></span>
-
+		<span class="caption" ><%= contact.firstname %> <%= contact.lastname %></span><br />
+		</span>
 	</li>
 	<% end %>
 </ol>
@@ -16,10 +18,10 @@
     // Sorting the list
 
     $(document).ready(function(){
-      $('#department').sortable({
+      $('#contacts').sortable({
         axis: 'y',
         dropOnEmpty: false,
-        handle: '.photos',
+        handle: '.handle',
         cursor: 'move',
         items: 'li',
         opacity: 0.4,

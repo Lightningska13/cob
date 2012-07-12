@@ -31,12 +31,14 @@
  <p>
     <%= f.submit @button_text %>
   </p>
+<p><%= link_to 'Cancel', departments_path, :class=>'admin' %></p>
 </div>
 <div id="rightCol">
 	<div style="padding-left:10px;">
 	   <% if @button_text == 'Update' %> 
 	   <div class="showcase_image_list">
 	    <h2 class="title">Contacts</h2>   
+		<%= link_to "Add Contact", new_department_contact_path(@department), :class=>'foot' %><br />
 		<span class="instructions">Drag contacts to reorder them</span>
 	    <%= render :partial => 'contact_draggable'%>
 

@@ -1,16 +1,5 @@
-<div id="centerCol">
-<% form_for([@department, @contact], :html => { :multipart => true }) do |f| %>
-<% if @contacts.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@contacts.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-    <ul>
-    <% @contacts.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+<div id="middleCol">
+<%= form_for([@department, @contact], :html => { :multipart => true }) do |f| %>
   <p>
     <%= f.label :firstname %><br />
     <%= f.text_field :firstname %>
@@ -26,10 +15,6 @@
   <p>
     <%= f.label :email %><br />
     <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :postion %><br />
-    <%= f.text_field :position, :size=>3 %>
   </p>
   <p>
     <% if @showpic %>

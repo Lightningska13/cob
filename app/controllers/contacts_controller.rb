@@ -3,8 +3,8 @@ class ContactsController < ApplicationController
   # GET /contacts.xml
   
   def sort
-  	params[:showcase_image].each_with_index do |id, index|
-  		ShowcaseImage.update_all(['position=?', index+1], ['id=?', id])
+  	params[:contact].each_with_index do |id, index|
+  		Contact.update_all(['position=?', index+1], ['id=?', id])
    	end
  	render :nothing=>true
   end

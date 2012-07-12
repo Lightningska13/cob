@@ -2,7 +2,7 @@ class DepartmentsController < ApplicationController
 	before_filter :check_auth, :only=>[:edit]
  
   def sort
-  	params[:sortable_thumbs].each_with_index do |id, index|
+  	params[:contact].each_with_index do |id, index|
   		Contact.update_all(['position=?', index+1], ['id=?', id])
    	end
   	render :nothing=>true
@@ -55,6 +55,9 @@ class DepartmentsController < ApplicationController
     @button_text = 'Update'
     @showpic = @department.pic_file_name
     @contacts = Department.get_contacts(@department)
+    if admin?
+    	@cursor_style = 'cursor:move;' # show drag cursor on sortable list
+    end
   end
 
   # POST /departments

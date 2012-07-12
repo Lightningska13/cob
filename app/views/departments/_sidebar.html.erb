@@ -1,19 +1,18 @@
+<div>
+  <span class="contact_title"><%= @department.dept_name %></span>
+</div>
 <!-- IMAGE GALLERY - start -->
 
 <% if !@department.contacts.empty? %>
 	<% @contacts.each do |contact| %>
-			<div  class="contact clearfix">
-				<div>
-				<span class="contact_title"><%= contact.title %>: </span>
-				<p>
-				<% if contact.photo_file_name %>
-					<%= image_tag(contact.photo.url(:small), :class=>"photos") %><br />
-				<% end %>
-				<%= contact.firstname %> <%= contact.lastname %> <br />
-				<%= mail_to contact.email, contact.email %>
-				</p>
-				</div>
-			</div>
+		<div  class="contact clearfix">
+			<p><% if contact.photo_file_name %>
+				<p style="text-align:center"><%= image_tag(contact.photo.url(:medium), :class=>"photos") %></p>
+			<% end %>
+			<span class="contact_title"><%= contact.title %>: </span><br />
+			<%= contact.firstname %> <%= contact.lastname %>
+			</p>
+		</div>
 	<% end %>
 			
 <% end %>
@@ -38,13 +37,6 @@
 <div>
   <span class="contact_title">Fax:</span>
   <%= simple_format(@department.dept_fax) %>
-</div>
-<% end %>
-
-<% if @department.dept_email.any? %>
-<div>
-  <span class="contact_title">Email:</span>
-  <%= simple_format(@department.dept_email) %>
 </div>
 <% end %>
 

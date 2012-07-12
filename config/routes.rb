@@ -7,7 +7,12 @@ Cob::Application.routes.draw do
   
   resources "events"
   
-  resources "departments"
+  resources :departments do
+    collection do 
+      post :sort
+    end
+    resources :contacts
+  end
   
   resources "resources"
   

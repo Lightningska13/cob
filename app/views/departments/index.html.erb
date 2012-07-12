@@ -1,7 +1,18 @@
-<div id="middleCol">
+<div id="middleCol" class="wide">
 <h1>Departments, Boards, and Organizations</h1>
 <%= link_to 'New department', new_department_path, :class=>"admin" if auth? %>
-
+<ul>
+	<% @departments.each do |department| %>
+		<li><b><%=link_to department.dept_name, department, :class => 'nav' %> - <small><%= department.dept_phone %></small></b></li>
+		<% if admin?%>
+		<div style="margin-bottom:8px;">
+			<%= link_to 'Edit', edit_department_path(department), :class=>"admin" if auth?(department.id)%>
+			<%= link_to 'Delete', department, :class=>"admin", :confirm => 'Are you sure?', :method => :delete if auth?(department.id) %></div>
+		<% end %>
+		
+	<% end %>
+</ul>
+	<br /><br />
 <table style="margin-top:20px;">
 
 <% @departments.each do |department| %>
@@ -18,6 +29,4 @@
 </table>
 <br />
 <%= link_to 'New department', new_department_path, :class=>"admin" if auth? %>
-</div>
-<div id="rightCol">
 </div>
