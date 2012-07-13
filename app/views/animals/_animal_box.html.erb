@@ -1,0 +1,28 @@
+<div class='rounded boxshadow' style="background:#eee;margin-bottom:35px;padding-top:5px;">
+	<div class="content_holder">
+		<span class="img_wrapper"><%=image_tag animal.pic.url(:medium)%></span>
+		<ul>
+			<li class="id"><span><%= animal.species.upcase%> ID #</span> <%= animal.ac_id%></li>
+			<li><span>Sex:</span><%= animal.sex.titleize%></li>
+			<li><span>Age:</span><%= animal.age.titleize%></li>
+			<li><span>Breed:</span><%= animal.breed.titleize%></li>
+			<li><span>Arrival:</span><%= animal.arrival_date.strftime("%A %B %e, %Y")%></li>
+			<li><span>Release:</span><%= animal.release_date.strftime("%A %B %e, %Y")%></li>
+		</ul>
+		<p><% if animal.adoptable %>
+			<span>Viewable on web until: <span class="last_chance"><%= animal.final_date.strftime("%A %B %e, %Y")%></span></span>
+			<% else %>
+			<span>Not Available for Adoption: Pick up by owner only<span class="last_chance"> Last Date for Pick Up: <%= animal.final_date.strftime("%A %B %e, %Y")%></span></span>
+			<% end %>
+		</p>
+		<p><span>Location Found: </span><%= animal.location %></p>
+		<b>Description: </b><%= simple_format(animal.description, :style => "margin:0;padding:0;") %>
+	</div>
+	<% if admin? %>
+	<div style="float:right;">
+	<%= link_to 'Edit', edit_animal_path(animal), :class=>"admin" if auth?(@department.id)%>
+	<%= link_to 'Delete', animal, :class=>"admin", :data => { :confirm => 'Are you sure?'}, :method => :delete if auth?(@department.id) %>
+	</div>
+	<br clear="both" />
+	<% end %>
+</div>

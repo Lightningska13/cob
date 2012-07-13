@@ -1,0 +1,10 @@
+<% content_for :leftCol do %>
+	<%= render "/departments/sidebar" %>
+<% end %>
+<div id="middleCol" class="wide">
+	<div id="animal_list">
+		<%= render :partial => "animal_box", :locals => {:animal => @animal} %>
+	</div>
+<%= link_to 'Edit', edit_animal_path(@animal) %> |
+<%= link_to 'Back', animals_path %>
+</div>

@@ -1,4 +1,6 @@
 Cob::Application.routes.draw do
+  resources :animals
+
   mount Ckeditor::Engine => '/ckeditor'
 
 	resources "users"

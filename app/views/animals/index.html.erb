@@ -1,0 +1,14 @@
+<% content_for :leftCol do %>
+	<%= render "/departments/sidebar" %>
+<% end %>
+<div id="middleCol" class="wide">
+<h1>Strays / Adoptions</h1>
+<%= link_to 'New Record', new_animal_path, :class => "admin" if auth?(@department.id) %>
+<h2 style="text-align:center">Animals available at the shelter</h2>
+
+<div id="animal_list">
+	<%= render :partial => "animal_box", :collection => @animals, :as => :animal %>
+</div>
+
+<%= link_to 'New Record', new_animal_path, :class => "admin" if auth?(@department.id) %>
+</div>

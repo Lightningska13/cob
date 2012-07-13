@@ -1,0 +1,81 @@
+	<h1>Animal Control Records</h1>
+	<p><%= link_to :back, :back, :class => 'admin' %></p>
+<%= form_for(@animal, :html => { :multipart => true }) do |f| %>
+<div id="middleCol">
+
+  <% if @animal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
+
+      <ul>
+      <% @animal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ac_id, "ID #" %><br />
+    <%= f.text_field :ac_id %>
+  </div>
+  <div class="field">
+    <%= f.label :species %><br />
+    <%= f.select(:species, [['Dog', 'dog'],['Cat', 'cat'], ['Other', 'other']] ) %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br />
+    <label><%= f.radio_button :sex, 'Male', :class=>'radio' %><span class="radio_label"> Male</span></label>
+    <label><%= f.radio_button :sex, 'Female', :class=>'radio' %><span class="radio_label"> Female</span></label>
+    <label><%= f.radio_button :sex, 'Unknown', :class=>'radio' %><span class="radio_label"> Unknown</span></label>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :breed %><br />
+    <%= f.text_field :breed %>
+  </div>
+  <div class="field">
+    <%= f.label :arrival_date %><br />
+    <%= f.date_select :arrival_date %>
+  </div>
+  <div class="field">
+    <%= f.label :release_date %><br />
+    <%= f.date_select :release_date %>
+  </div>
+  <div class="field">
+    <%= f.label :final_date %><br />
+    <%= f.date_select :final_date %>
+  </div>
+  <div class="field">
+    <%= f.label :adoptable %><br />
+    <label><%= f.radio_button :adoptable, true, :class=>'radio' %><span class="radio_label"> Adoptable</span></label>
+    <label><%= f.radio_button :adoptable, false, :class=>'radio' %><span class="radio_label"> Pick up by owner</span></label>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location, :size => '60' %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :size => '50x4' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div></div>
+<div id='rightCol'>
+  <div class="field">
+    <%= f.label :pic, "Picture" %><br />
+<% if @animal.pic_file_name %>
+	<%= image_tag @animal.pic.url(:medium) %> <br />
+	<label class="instructions"><input type="checkbox" name="delete_image" value="1" /> Check to remove image</label>
+    <br />
+	<% end %>
+        
+      <%= f.file_field :pic %>  
+   </div>
+</div>
+
+<% end %>

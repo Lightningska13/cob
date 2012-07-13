@@ -1,0 +1,66 @@
+/* CSS Document */
+
+div#animal_list {  
+	margin:5px auto;
+	width:500px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:90%;
+	}
+	
+div#animal_list div.item {
+	margin-bottom:35px;
+}	
+	div#animal_list div.odd {
+		background:url(../images/css/bg_animal_repeater.gif) top center repeat-y;
+	}
+	div#animal_list div.odd div.head {
+		height:5px;
+		background:url(../images/css/bg_animal_rounded.gif) top center no-repeat;
+	}
+	div#animal_list div.odd div.foot {
+		height:5px;
+		background:url(../images/css/bg_animal_rounded.gif) bottom center no-repeat;
+	}
+	
+div#animal_list .content_holder {
+	margin:0 15px;
+	padding-bottom:10px;
+}
+	div#animal_list img {
+		margin:3px;
+	}
+	div#animal_list span.img_wrapper {
+		display:block;
+		background:#fff;
+		margin-right:10px;
+		border:1px solid #CCC;
+		float:left;
+	}
+	
+	
+	div#animal_list ul {
+		margin-left:180px;
+		list-style-type:none;
+	}
+	div#animal_list li {
+		margin-bottom:5px;
+	}
+	div#animal_list li span {
+		width:80px;
+		float:left;
+		font-weight:bold;
+	}
+	div#animal_list p {
+		padding-top:10px;
+		clear:both;
+	}
+	div#animal_list p span {
+		font-weight:bold;
+		display:block;
+	}
+	div#animal_list p span span{
+		font-weight:bold;
+		color:red;
+	}	
+	
+.id {background-color:darkblue;color:white;}

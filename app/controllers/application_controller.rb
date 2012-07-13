@@ -148,6 +148,9 @@ class ApplicationController < ActionController::Base
     		dept=thisFaq.department_id
     	elsif @current_controller == "departments"
     		dept=params[:id]
+    	elsif @current_controller == "animals"
+    	  thisdept=Department.find_by_dept_name('Animal Control')
+    	  dept=thisdept.id
     	else
     		dept=0
     	end

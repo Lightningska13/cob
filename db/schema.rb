@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120713152709) do
+ActiveRecord::Schema.define(:version => 20120713181037) do
 
   create_table "animals", :force => true do |t|
     t.string   "ac_id"
@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(:version => 20120713152709) do
     t.date     "arrival_date"
     t.date     "release_date"
     t.date     "final_date"
-    t.string   "adoptable"
+    t.boolean  "adoptable"
     t.string   "location"
     t.text     "description"
     t.string   "pic_file_name"
-    t.integer  "pic_file_size"
     t.string   "pic_content_type"
+    t.integer  "pic_file_size"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
