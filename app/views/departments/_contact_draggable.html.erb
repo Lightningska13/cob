@@ -4,10 +4,10 @@
 		<span class="handle" style="<%= @cursor_style %>">
 		<%= image_tag contact.photo.url(:small), :class => "photos move" if contact.photo_file_name %>
 	 	
-	<%= link_to	'Edit', edit_department_contact_path(@department, contact.id), :class => 'foot' %>  
+	<%= link_to	'Edit', edit_department_contact_path(@department, contact.id), :class => 'admin' %>
 		<%= link_to 'Delete', department_contact_path(@department, contact.id),
-	        :confirm => 'Are you sure?', :method => :delete, :class => 'foot'%>
-		<span class="caption" ><%= contact.firstname %> <%= contact.lastname %></span><br />
+	        :confirm => 'Are you sure?', :method => :delete, :class => 'admin'%><br />
+		<span class="caption"><%= contact.firstname %> <%= contact.lastname %></span><br />
 		</span>
 	</li>
 	<% end %>
