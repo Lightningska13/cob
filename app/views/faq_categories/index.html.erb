@@ -1,6 +1,7 @@
 <div id="middleCol">
 <h1>Listing FAQ Categories</h1>
-
+<p><%= link_to 'New FAQ Category', new_faq_category_path, :class=>'admin' %> 
+<%= link_to 'FAQ List', faqs_path, :class=>'admin' %></p>
 <table>
   <tr>
     <th></th>
@@ -16,11 +17,6 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New FAQ Category', new_faq_category_path, :class=>'admin' %> 
-<%= link_to 'FAQ List', faqs_path, :class=>'admin' %>
 </div>
 <div id="rightCol">
 </div>

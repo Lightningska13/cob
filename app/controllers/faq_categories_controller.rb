@@ -46,7 +46,7 @@ class FaqCategoriesController < ApplicationController
     respond_to do |format|
       if @faq_category.save
         flash[:notice] = 'FaqCategory was successfully created.'
-        format.html { redirect_to(@faq_category) }
+        format.html { redirect_to faq_categories_path }
         format.xml  { render :xml => @faq_category, :status => :created, :location => @faq_category }
       else
         format.html { render :action => "new" }
@@ -63,7 +63,7 @@ class FaqCategoriesController < ApplicationController
     respond_to do |format|
       if @faq_category.update_attributes(params[:faq_category])
         flash[:notice] = 'FaqCategory was successfully updated.'
-        format.html { redirect_to(@faq_category) }
+        format.html { redirect_to faq_categories_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -9,7 +9,7 @@
   <%=h @event.start_date.strftime("%A %B %e, %Y") %>  <%=h  " - " + @event.end_date.strftime("%A %B %e, %Y") if @event.end_date != @event.start_date %>
 </p>
 <div class="description">
-  <%= @event.description %>
+  <%== @event.description %>
 </div>
 
 <% if @event.url.any? %>

@@ -12,7 +12,7 @@ class FaqsController < ApplicationController
   end
   
   def sort
-  	params[:sort_faqs].each_with_index do |id, index|
+  	params[:faq].each_with_index do |id, index|
   		Faq.update_all(['position=?', index+1], ['id=?', id])
   	end
   	render :nothing=>true

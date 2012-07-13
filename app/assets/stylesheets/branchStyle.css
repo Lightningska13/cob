@@ -223,11 +223,20 @@ footer {
 **************************************************************/
 /*Events*/
 #eventListing p {
-	font-size: x-small;
+	font-size: small;
 	padding-left: 20px;
 }
 #eventListing span {
 	color: #63045d;
+	font-size: small;
+}
+#eventListing a {
+	text-decoration: none;
+	color: #003663;
+}
+#eventListing a:hover {
+	text-decoration: underline;
+	color: #003663;
 }
 .eventItem {
 	font-size: 90%;
@@ -245,23 +254,40 @@ footer {
 }
 /*Resources*/
 #middleCol h2 {
-	font-size: small;
+	font-size: medium;
 	color: #63045d;
+}
+.instructions {
+	color: #B2B2B2;
+	color: gray;
+	font-size: x-small;
+	text-decoration: none;
+	padding-left: 10px;
 }
 /*FAQS*/
 #faqs {
 }
-#faqs li {
-}
-#faqs a {
+#faqs li a {
 	color: #003663;
 	text-decoration: none;
 	font-size: 90%;
 }
-#faqs a:hover {
+#faqs li a:hover {
 	color: #003663;
 	text-decoration: underline;
 	font-size: 90%;
+}
+.question {
+	color: #003663;
+	font-weight: bold;
+}
+.additional {
+	color: #B2B2B2;
+	color: gray;
+	font-size: x-small;
+	text-decoration: none;
+	padding-left: 15px;
+	margin-top: -8px;
 }
 
 a.admin {
