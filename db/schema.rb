@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120706145835) do
+ActiveRecord::Schema.define(:version => 20120713152709) do
 
   create_table "animals", :force => true do |t|
     t.string   "ac_id"
@@ -82,11 +82,9 @@ ActiveRecord::Schema.define(:version => 20120706145835) do
     t.integer "resource_id"
   end
 
-  create_table "departments_users", :force => true do |t|
-    t.integer  "department_id"
-    t.integer  "user_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+  create_table "departments_users", :id => false, :force => true do |t|
+    t.integer "department_id"
+    t.integer "user_id"
   end
 
   create_table "events", :force => true do |t|

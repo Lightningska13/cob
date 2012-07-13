@@ -18,20 +18,26 @@ class UsersController < ApplicationController
 
   def new
 		@user = User.new  
+		@departments = Department.order(:dept_name)
 	end
 
 	def create  
    @user = User.new(params[:user])  
-   if @user.save  
-     flash[:notice] = "User Created."  
-     redirect_to(users_url)  
-   else  
-     render :action => 'new'  
-   end  
+
+   respond_to do |format|
+     if @user.save  
+       flash[:notice] = "User Created."  
+       format.html {redirect_to(users_url) } 
+     else  
+       format.html { render :action => 'new' } 
+     end  
+    end
+    
   end  
  
   def edit
    @user = User.find(params[:id])  
+		@departments = Department.order(:dept_name)
   end
 
   # PUT /sponsors/1.xml

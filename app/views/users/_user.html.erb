@@ -17,8 +17,8 @@
      <%= form.text_field :login %>  
    </p>  
 	<p>  
-     <%= form.label :id, "Full Name" %><br /> 
-     <%= form.text_field :id %>  
+     <%= form.label :name, "Full Name" %><br /> 
+     <%= form.text_field :name %>  
    </p>  
    <p>  
      <%= form.label :admin_level, "Level" %>  <br />
@@ -39,7 +39,7 @@
    <% if @user.admin_level < 10 %>
 			<div class="cat_list">
 			 <p> Select Departments</p>
-			 <% for department in Department.find(:all,:order=>"id asc") %>  
+			 <% for department in @departments %>  
 					 <div>  
 						 <label><%= check_box_tag "user[department_ids][]", department.id, @user.departments.include?(department) %>  
 						 <%= department.dept_name %>  </label>
