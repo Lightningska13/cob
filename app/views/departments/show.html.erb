@@ -3,7 +3,7 @@
 <% end %>
 <div id="middleCol">
 <div class="pageHeader">  <%= @department.dept_name %></div>
-
+<%= link_to 'Edit', edit_department_path(@department), :class=>"admin" if auth?(@department.id) %>
     <% if @showpic %>
 	<div class="leftImageWrapper imgDept"><%= image_tag @department.logo.url(:medium) %> </div>
 	<% end %>
@@ -24,8 +24,6 @@
 <div class="description">
   <%== @department.description %>
 </div>
-
-
 <%= link_to 'Edit', edit_department_path(@department), :class=>"admin" if auth?(@department.id) %>
 </div>
 <div id="rightCol">

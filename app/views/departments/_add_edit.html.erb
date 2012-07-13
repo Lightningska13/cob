@@ -1,4 +1,3 @@
-
 <%= form_for(@department, :html => { :multipart => true }) do |f| %>
 <div id="middleCol" >
 <% if @department.errors.any? %>
@@ -13,7 +12,7 @@
 <% end %>
 <p>
   <%= f.label :dept_name %><br />
-  <%= f.text_field :dept_name, :size => '60', :autofocus => 'autofocus' %>
+  <%= f.text_field :dept_name, :size => '40', :autofocus => 'autofocus' %>
 </p>
   <p>
     <% if @showpic %>
@@ -38,8 +37,8 @@
 	   <% if @button_text == 'Update' %> 
 	   <div class="showcase_image_list">
 	    <h2 class="title">Contacts</h2>   
-		<%= link_to "Add Contact", new_department_contact_path(@department), :class=>'foot' %><br />
-		<span class="instructions">Drag contacts to reorder them</span>
+		<span class="instructions">Drag contacts to reorder them</span><br />
+		<%= link_to "Add Contact", new_department_contact_path(@department), :class=>'admin' %>
 	    <%= render :partial => 'contact_draggable'%>
 
 	  </div>
