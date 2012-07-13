@@ -1,6 +1,6 @@
    <ul id="faqs" style="list-style:url('/images/dash.png')">
    <% @faqs.each do |faq| %>  
-    <li id="faq_<%= faq.id %>"><%= image_tag("golddot.png") if (faq.featured and admin?)%> <%= link_to faq.question, faq %></li>
+    <li id="faq_<%= faq.id %>"> <%= link_to faq.question, faq %></li>
 			<% if admin? %>
 			<div style="margin-bottom: 8px;">
 			<br /><span class="handle" style="<%= @cursor_style %>">DRAG</span>
