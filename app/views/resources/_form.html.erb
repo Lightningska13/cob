@@ -1,5 +1,6 @@
 <%= form_for(@resource, :html => { :multipart => true }) do |f| %>
-<div id="middleCol">  
+<div id="middleCol">
+	<h1>New Resource</h1>  
 <% if @resource.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
@@ -20,14 +21,14 @@
   <label><%= radio_button("resource", "resource_type", "Link", :onclick => "changeContent('2');")  %> Link </label>
 </div>
 	<% end %>
-
+  <br />
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title, :size=> 80 %>
-  </div>
+    <%= f.text_field :title, :size=> 40 %>
+  </div><br />
   <div class="field">
     <%= f.check_box :featured %> <%= f.label :featured, "Feature on County Home Page" %>
-  </div>
+  </div><br />
 	<div id="content_area">
 		<% if @resource.resource_type == 'Link' %>
 			<div class="field">
@@ -47,18 +48,21 @@
 		<% else %>
 			<%= f.hidden_field :res_file_name, :value=>"Text" %>
 		<% end %>
-	</div>
+	</div><br />
 	<div class="field">
 		 <%= f.label :description %><br />
-	   	<%= f.cktext_area :description, :toolbar=>'Basic', :width=>'500px', :height=>'300px' %>
-	</div>
+	   	<%= f.cktext_area :description, :toolbar=>'Basic', :width=>'350px', :height=>'300px' %>
+	</div><br />
   <div class="actions">
     <%= f.submit %>
-  </div>
+	<p>
+	<%= link_to 'Cancel', resources_path, :class=>'admin' %>
+  	</p>
+</div>
 </div><!-- middleCol -->
 <div id="rightCol">
-	<div class="cat_list">
-	<p> Select Categories</p>
+	<h1> Select Categories</h1>
+		<div style="padding-left: 10px;">
 	 <% for rescat in @rescats %>  
 			 <div>  
 				 <label><%= check_box_tag "resource[rescat_ids][]", rescat.id, @resource.rescats.include?(rescat) %>  
@@ -67,8 +71,8 @@
 	 <% end %>
 	<br />
 	 </div>
-		<div class="cat_list">
-		 <p> Select Departments</p>
+		<h1> Select Departments</h1>
+			<div style="padding-left: 10px;">
 		 <% for department in @departments %>  
 				 <div>  
 					 <label><%= check_box_tag "resource[department_ids][]", department.id, @resource.departments.include?(department) %>  
