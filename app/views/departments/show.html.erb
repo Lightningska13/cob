@@ -7,24 +7,24 @@
     <% if @showpic %>
 	<div class="leftImageWrapper imgDept"><%= image_tag @department.logo.url(:medium) %> </div>
 	<% end %>
-<!-- ITEM_LIST -->
-<div class="item_list">
-		<% if @faqs.any? %>
-		<h2 class="listDivider">Common Solutions</h2>
-		<%= render :partial=>'faqs/faq_list' %>
-		<% end %>
-		
-		<% if @resources.any? %>
-		<h2 class="listDivider">Resources</h2>
-		<%= render 'resources/resource_list'%>
-		<p style="text-align:right;"><%= link_to 'view all ' + @department.dept_name + ' resources', {:action=>:index, :controller=>:resources, :dept=>@department}, :class=>'foot' %></p>
-		<% end %>
-
-</div>
 <div class="description">
   <%== @department.description %>
 </div>
 <%= link_to 'Edit', edit_department_path(@department), :class=>"admin" if auth?(@department.id) %>
 </div>
 <div id="rightCol">
+	<!-- ITEM_LIST -->
+	<div class="item_list" style="padding-left: 10px;">
+			<% if @faqs.any? %>
+			<h2 class="listDivider">Common Solutions</h2>
+			<%= render :partial=>'faqs/faq_list' %>
+			<% end %>
+
+			<% if @resources.any? %>
+			<h2 class="listDivider">Resources</h2>
+			<%= render 'resources/resource_list'%>
+			<p style="text-align:right;"><%= link_to 'view all ' + @department.dept_name + ' resources', {:action=>:index, :controller=>:resources, :dept=>@department}, :class=>'foot' %></p>
+			<% end %>
+
+	</div>
 </div>

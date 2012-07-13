@@ -20,7 +20,11 @@ Cob::Application.routes.draw do
   
   resources "contact_us"
 
-  resources "faqs"
+  resources :faqs do
+    collection do
+      post :sort
+    end
+  end
 
   resources "faq_categories"
   

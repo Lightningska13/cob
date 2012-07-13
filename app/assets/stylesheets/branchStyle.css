@@ -251,17 +251,27 @@ footer {
 /*FAQS*/
 #faqs {
 }
-#faqs li {
-}
-#faqs a {
+#faqs li a {
 	color: #003663;
 	text-decoration: none;
 	font-size: 90%;
 }
-#faqs a:hover {
+#faqs li a:hover {
 	color: #003663;
 	text-decoration: underline;
 	font-size: 90%;
+}
+.question {
+	color: #003663;
+	font-weight: bold;
+}
+.additional {
+	color: #B2B2B2;
+	color: gray;
+	font-size: x-small;
+	text-decoration: none;
+	padding-left: 15px;
+	margin-top: -8px;
 }
 
 a.admin {

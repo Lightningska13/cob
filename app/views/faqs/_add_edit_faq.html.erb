@@ -6,10 +6,10 @@
 	    <ul>
 	    <% @faqs.errors.full_messages.each do |msg| %>
 	      <li><%= msg %></li>
-	<% end %>
+		<% end %>
 	    </ul>
 	  </div>
-<% end %>
+	<% end %>
   <p>
     <%= f.label :question %><br />
     <%= f.text_field :question, :size=> 40 %>
@@ -17,12 +17,12 @@
   <p>
      <%= f.label :answer %><br />
    	 <%= f.cktext_area :answer, :toolbar=>'Basic', :width=>'360px', :height=>'200px' %>  </p>
-	</p>
+  </p>
   <p>
     <%= f.label :url %><br />
     <%= f.text_field :url, :size=> 40 %>
   </p>
-	<p>
+  <p>
     <%= f.label 'Department' %><br />
 		<%= collection_select(:faq, :department_id, @departments, :id, :dept_name) %>
   </p>
@@ -33,17 +33,19 @@
   <p>
     <%= f.submit @button_text %>
   </p>
-</div>
-<% end %>
+  <p>
+	<%= link_to 'Cancel', faqs_path, :class=>'admin' %>
+  </p>	
 </div>
 <div id="rightCol">
-	<div id="subContent">
-		 <h2 class="title"><b>Select Categories</b></h2>
+	<div style="padding-left:10px;">
+		 <h2 class="title">Select Categories</h2>
 		 <% for cat in FaqCategory.find(:all) %>  
 				 <div>  
 					 <label><%= check_box_tag "faq[faq_category_ids][]", cat.id, @faq.faq_categories.include?(cat) %>  
-					 <%= cat.category %>  </label>
+					 <%= cat.category %></label>
 				 </div>  
 		 <% end %>
 	</div>
 </div>
+<% end %>
