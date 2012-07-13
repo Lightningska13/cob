@@ -24,6 +24,14 @@ header.main {
 	width:760px;
 	height:131px;
 }
+.listDate {
+	float: right;
+	color: #003663;
+	padding-left: 30px;
+	padding-top: 8px;
+	font-size: small;
+	font-style: italic;
+}
 #leftCol {
 	float: left;
 	width: 150px;
@@ -304,3 +312,4 @@ a.admin:hover {
 	border:1px inset;
 	text-decoration:none;
 	}
+/*JQUERY CSS*/
