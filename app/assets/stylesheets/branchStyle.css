@@ -30,8 +30,8 @@ header.main {
 	color: #FFFFFF;
 	min-height: 500px;
 	font-size: 12px;
-/*	min-height: 500px;
-	max-height: none;
+	min-height: 500px;
+/*		max-height: none;
 	height:100%;
 	background-color: #003663;
 	background-image: url('/assets/bg/navRepeater.png');
