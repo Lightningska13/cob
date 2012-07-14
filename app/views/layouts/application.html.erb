@@ -4,16 +4,10 @@
   <title>Branch County Michigan</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "jquery", "application" %>
+
   <%= csrf_meta_tags %>
 
-<script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
 
-});
-
-</script>
 </head>
 <body>
 	<div id="pageContent" class="pageshadow">
@@ -23,9 +17,7 @@ $(document).ready(function() {
 		<nav id="main">
 			<%= render "/layouts/main_nav" %>
 		</nav><!--endmainNav-->
-		<% if admin? %>
-			<div id="adminNav"><%= render "/layouts/admin_nav" %></div>
-		<% end %><!--endadminNav-->
+			<%= render "/layouts/admin_nav" %>
 		<div id="leftCol">
 			<%= content_for?(:leftCol) ? yield(:leftCol) : render("/layouts/boilerplate") %>
 		</div>
