@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(:version => 20120713181037) do
     t.integer "resource_id"
   end
 
-  create_table "departments_users", :id => false, :force => true do |t|
+  create_table "departments_users", :force => true do |t|
     t.integer "department_id"
     t.integer "user_id"
   end

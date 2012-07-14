@@ -13,6 +13,7 @@ nav#main {
 	position:absolute;
 	left: 149px;
 	top: 81px;
+	width:605px;
 }
 nav#main img {
 	margin-right:-5px;
@@ -126,7 +127,7 @@ footer {
 	margin-top:10px;
 }
 /* LOGIN */
-.login {
+/*.login {
 	font-size: 80%;
 	margin-left: 175px;
 	margin-top: -5px;
@@ -135,6 +136,35 @@ footer {
 	font-size: 65%;
 	padding-left: 15px;
 }
+*/
+
+
+div.login {
+	position:absolute;
+	top:110px;
+	left:149px;
+	border:inset #eee;
+	width:600px;	
+	background: #eeffff;
+	padding-left:5px;
+	padding-top:2px;
+	height:1em;
+}
+	div.login a{
+		display:block;
+		font-size:0.8em;
+		margin-right:10px;
+		float:left;
+	}
+	div.login span {
+		font-size:x-small;
+		color: green;
+		font-style:italic;
+		padding:2px;
+		display:block;
+		float:right;
+		}
+
 /**************************************************************
 ...contentBox1...START
 **************************************************************/

@@ -17,9 +17,7 @@
 		<nav id="main">
 			<%= render "/layouts/main_nav" %>
 		</nav><!--endmainNav-->
-		<% if admin? %>
-			<div id="adminNav"><%= render "/layouts/admin_nav" %></div>
-		<% end %><!--endadminNav-->
+			<%= render "/layouts/admin_nav" %>
 		<div id="leftCol">
 			<%= content_for?(:leftCol) ? yield(:leftCol) : render("/layouts/boilerplate") %>
 		</div>
