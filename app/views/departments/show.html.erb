@@ -11,7 +11,7 @@
 </div>
 <div id="rightCol">
     <% if @showpic %>
-	<div><%= image_tag @department.pic.url(:medium), :style => 'border:1px solid darkblue;' %> </div>
+	<div class="bordered boxshadow" style="padding:3px;"><%= image_tag @department.pic.url(:medium) %> </div>
 	<% end %>
 	<!-- ITEM_LIST -->
 	<div class="item_list" style="padding-left: 10px;">
