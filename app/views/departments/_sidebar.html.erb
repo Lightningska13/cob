@@ -5,7 +5,7 @@
 
 <% if !@department.contacts.empty? %>
 	<% @contacts.each do |contact| %>
-		<div  class="contact clearfix">
+		<div  class="contact clearfix" style="text-align:center">
 			<p><% if contact.photo_file_name %>
 				<p style="text-align:center"><%= image_tag(contact.photo.url(:medium), :class=>"photos") %></p>
 			<% end %>
