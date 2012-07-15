@@ -16,12 +16,12 @@
 </p>
   <p>
     <% if @showpic %>
-	<%= image_tag @department.logo.url(:medium) %> <br />
+	<%= image_tag @department.pic.url(:medium) %> <br />
 	<label class="instructions"><input type="checkbox" name="delete_image" value="1" /> Check to remove image</label>
     <br />
 	<% end %>
-      <%= f.label :logo %>  
-      <%= f.file_field :logo %>  
+      <%= f.label :pic %>  
+      <%= f.file_field :pic %>  
   </p>
    <p>
     <%= f.label :description %><br />
