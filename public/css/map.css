@@ -1,0 +1,112 @@
+/*------------------------------
+Author: Gabriel Zawadzki
+Email: zawadzki@micounties.org
+created: 12/23/2010
+Description: Stylesheet for Branch
+County brownfield site map
+--------------------------------*/
+/*Sidebar div styl*/
+#sidebar {
+     float: left;
+		 border: solid 1px #999;
+		 width: 20%;
+		 padding-bottom: 10px;
+		 margin-left: 0.5%;
+		 margin-top: 0.5%;
+		 background-color: #FFF;
+}
+#sidebar h3 {
+		 margin: 0 0 0 ;
+		 padding: 5px 5px 5px 5px;
+		 background-color: #C1CDC1;
+		 border-bottom: ridge;
+}
+#sidebar h4 {
+     margin: 0 5px 0 5px;
+		 padding-top: 5px;
+}
+#sidebar ul {
+     margin-top: 0;
+		 margin-bottom: 5px;
+}
+#sidebar p {
+     margin: 0 5px 0 5px;
+}
+/*Map div style*/
+#map {
+		 height: 98%;
+		 width: 78%;
+		 border: solid 1px #999;
+		 float: right;
+		 margin-right: 0.5%;
+		 margin-top: 0.5%;
+}
+
+html, body {
+			height: 100%;
+			margin: 0;
+			background-color: #003663;
+}
+/*Infowindow style*/
+#info img {
+			margin: 0 20px 0 0;
+			float: left;
+			border: 3px ridge;
+}
+
+#info {
+			overflow: hidden;
+}
+
+#info h3{
+			margin: 0 0 2px 0;
+			clear: both;
+			display: block;
+			border-bottom: ridge;
+			padding: 0 5px 0 5px;
+}
+
+#info p{
+			clear: left;
+			margin: 0;
+}
+#info ul {
+			margin-top: 0;
+			margin-bottom: 0;
+}
+
+#ref {
+		 border-top: 1px solid black;
+}
+
+#ref p {
+		 font-size: .75em;
+		 margin: 0 5px 0 5px;
+}
+/*Tooltip styl
+CSS tooltip method source: http://psacake.com/web/jl.asp
+*/
+a.info{
+    position:relative; /*this is the key*/
+    z-index:2;
+    color:#0000CD;
+    text-decoration:none;
+}
+
+a.info:hover{
+	  z-index:3; 
+		background-color:#BDBDBD;
+}
+
+a.info span{display: none}
+
+a.info:hover span { /*the span will display just on :hover state*/
+    display:block;
+    position:absolute;
+    top:3em; left:3em; width:20em;
+    border:1px solid #636363;
+		padding: 5px;
+    background-color:#EBEBEB; color:#000;
+    text-align: left;
+		z-index: 4;
+}
