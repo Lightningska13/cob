@@ -2,7 +2,7 @@
    <% @faqs.each do |faq| %>  
     <li id="faq_<%= faq.id %>"> <%= link_to faq.question, faq %></li>
 			<% if admin? %>
-			<div style="margin-bottom: 8px;">
+			<div style="margin-bottom: 8px;margin-top:-5px">
 			<br /><span class="handle" style="<%= @cursor_style %>">DRAG</span>
 			<%= link_to	'Edit', edit_faq_path(faq), :class => 'admin' %>  
 			<%= link_to 'Delete', faq, :confirm => 'Are you sure?', :method => :delete, :class => 'admin'%>
