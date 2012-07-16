@@ -5,8 +5,8 @@ class DashController < ApplicationController
     end
     @page_title = "City Government Information for Marshall, Michigan"
 		@faqs= Faq.find_for_home
-  	@events = Event.find_for_home('Event','ASC')
-  	@news = Event.find_for_home('News','DESC')
+  	@events = Event.upcoming.event_type.home
+  	@news = Event.upcoming.news_type.home
   	@resources = Resource.find_for_home
 		
 	end

@@ -144,7 +144,14 @@ footer {
 }
 */
 
-
+.deptBox {
+	border:1px solid #ddd;
+	margin:1em 10px;
+}
+.deptBox h2 {
+	background:#ddd;
+	margin-top:0;
+}
 div.login {
 	position:absolute;
 	top:110px;

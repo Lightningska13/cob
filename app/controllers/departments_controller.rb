@@ -24,6 +24,7 @@ class DepartmentsController < ApplicationController
   def show
     @department = Department.find(params[:id])
     @showpic = @department.pic_file_name
+  	@news = @department.events.upcoming.department
     @faqs= @department.faqs.find(:all,:limit=>10, :order=>:position)
     @resources=@department.resources.find(:all,:limit=>10, :order=>:position)
     @contacts = Department.get_contacts(@department)

@@ -1,6 +1,12 @@
 class Event < ActiveRecord::Base
  	belongs_to :department
- 	attr_accessible :event_type, :start_date, :end_date, :title, :blurb, :description, :url, :department_id
+ 	attr_accessible :event_type, :start_date, :end_date, :title, :blurb, :description, :url, :department_id, :placement
+ 	
+ 	scope :department, where("placement = 'department' or placement = 'both'")
+ 	scope :home, where("placement = 'home' or placement = 'both'")
+  scope :upcoming, where("end_date >= '#{Date.today}'").order('start_date asc')
+  scope :news_type, where("event_type='News' AND start_date<='#{Date.today}'")
+  scope :event_type, where("event_type='Event'")
  	
   def	self.find_for_home(event_type,order)
    	if event_type

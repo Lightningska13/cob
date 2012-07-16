@@ -22,6 +22,10 @@
     <%= f.label :title %><br />
     <%= f.text_field :title, :size => 50 %>
   </p>
+ <p>
+    <%= f.label :placement, "Website Placement" %><br />
+    <%= f.select(:placement, [['Department Page','department'],['Home Page','home'], ['Both Pages','both']]) %>
+ </p>
   <p>
     <%= f.label :start_date %><br />
     <%= f.date_select :start_date %>

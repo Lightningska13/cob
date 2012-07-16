@@ -4,6 +4,22 @@
 <div id="middleCol">
 <div class="pageHeader">  <%= @department.dept_name %></div>
 <%= link_to 'Edit', edit_department_path(@department), :class=>"admin" if auth?(@department.id) %>
+<% if @news.size>0 %>
+<div class="deptBox">
+	<h2>Announcements/Events</h2> 
+		 <ul>
+		 <% @news.each do |news| %>  
+			<li><%= link_to news.title, event_path(news, :dept => @department.id) %></li>
+				<% if admin? %>
+					<dd><%= link_to	'Edit', edit_event_path(news), :class => 'admin' %>  
+					<%= link_to 'Delete', news, :confirm => 'Are you sure?', :method => :delete, :class => 'admin'%>
+					</dd>
+				<% end %>
+
+		<% end %>  
+		</ul>
+</div>
+<% end %>
 <div class="description">
   <%== @department.description %>
 </div>

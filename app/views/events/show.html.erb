@@ -1,6 +1,12 @@
 
 <div id="middleCol">
-	<p><%= link_to "View All Events", events_path, :class => 'admin' %> <%= link_to "View All Announcements", events_path(:t=>'News'), :class => 'admin' %></p>
+	<div id="eventListing">
+	<p>| <%= link_to "News", events_path(:t=>'News') %> | 
+	<%= link_to "Events", events_path %> | 
+	<%if params[:dept]%> 
+		<%= link_to 'Back', :back %> |
+	<% end %>
+	</p>
   <h1><%=h @event.title %></h1>
 	<p>
 	  <i><%= @event.blurb %></i>

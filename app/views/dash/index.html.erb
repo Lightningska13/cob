@@ -1,10 +1,10 @@
 <div id="middleCol">
 	<div class="pageHeader">Welcome to Branch County</div>
-	<h1>Common Solutions</h1> 
+	<h2>Common Solutions</h2> 
 	<%= render :partial => "faqs/faq_list" %>
-		<% if @news.size>0 %>
 		<%= link_to "View All FAQs...", faqs_path, :class=>'foot' %>
-		<h1>Announcements</h1> 
+		<% if @news.size>0 %>
+		<h2>Announcements</h2> 
 			 <ul>
 			 <% @news.each do |news| %>  
 				<li><%= link_to news.title, news %></li>
@@ -18,7 +18,7 @@
 			</ul>
 			<div><%= link_to "View All Announcements...", events_path(:t=>'News'), :class=>'foot' %></div>
 	<% end %>
-		<h1>Upcoming Events</h1>		
+		<h2>Upcoming Events</h2>		
 			<% @events.each do |event| %>
 			<div class="eventItem <%= cycle('odd','even') %>">
 				<%= link_to event_path(event) do %>
