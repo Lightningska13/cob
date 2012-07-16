@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<link rel="stylesheet" type="text/css" href="main.css">
+<head>
+<title>Branch County Brownfield Redevelopment Authority brownfield site map</title>
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAANlftSt05YQLsuFUXfihkeRQFaV6ixbohSZnR3juUV0qN-CfFURTMe-tBecg6KwnG3vbwJk089oMcsw" type="text/javascript"></script>
+   <script language="JavaScript" type="text/javascript">
+
+		function initialize(){
+			if (GBrowserIsCompatible()){
+				var map = new GMap2(document.getElementById("map_canvas"));
+
+				//Map controls
+				var customUI = map.getDefaultUI();
+				customUI.maptypes.physical = false;
+				map.setUI(customUI);
+
+				//Branch County Outline
+				map.setCenter(new GLatLng(41.915867, -85.059067), 9);
+
+		   //Brownfield site markers and data
+			 var marker0 = new GMarker(new GLatLng(41.879000, -85.195200));  //Former Putnam Hitch Site
+			 map.addOverlay(marker0);
+			 //InfoWindow: Putnam Hitch Products
+			 GEvent.addListener(marker0, "click", function(){
+			 marker0.openInfoWindowHtml("<image src='image/putnam.jpg'/>" + "<br/><b>Address:</b> Bronson, MI 49028" + "<br/><b>Former Owner:</b> Putnam Hitch Products" + "<br/><b>Current Owner:</b> Wickey Custom Cabinets" + "<br/><b>Environmental Assessments Completed:</b>" + "<br/>Phase I ESA: 3/05/09" + "<br/>Phase II/BEA: 2/23/09");
+			 });
+
+			 var marker1 = new GMarker(new GLatLng(41.930040, -84.892630));  //Former Wolverine Portland Cement Company Site
+			 map.addOverlay(marker1);
+			 //InfoWindow: Wolvering Portland Cement Company
+			 GEvent.addListener(marker1, "click", function(){
+			 marker1.openInfoWindowHtml("<image src='image/cement.jpg'/>" + "<br/><b>Address:</b> Beckwith Drive" + "<br/>Quincy Township, MI 49082" + "<br/><b>Former Owner:</b>Wolverine Portland Cement Company" + "<br/><b>Current Owner:</b> None" + "<br/><b>Environmental Assessments Completed:</b>" + "<br/>Phase II ESA: 3/20/09" + "<br/>BEA: 5/08/09");
+			 });
+
+ var marker2 = new GMarker(new GLatLng(41.9464530000, -84.8890030000));  //Former Speedrack Advantage, LLC Site
+			 map.addOverlay(marker2);
+			 //InfoWindow: Wolvering Portland Cement Company
+			 GEvent.addListener(marker2, "click", function(){
+			 marker2.openInfoWindowHtml("<image src='image/acorn.jpg'/>" + "<br/><b>Address:</b> 47 Cole Street" + "<br/>Quincy, MI 49082" + "<br/><b>Former Occupant:</b>Acorn Products" + "<br/><b>Current Owner:</b> Speedrack Advantage, LLC." + "<br/><b>Current Occupant:</b> Speedrack Products Group, Ltd." + "<br/><b>Environmental Assessments In Progress:</b>" + "<br/>Phase II ESA in progress in preparation for a clean-up Pilot<br/> Study designed under an MDEQ clean grant");
+			 });
+
+			}
+		}
+</script>
+</head>
+<body onload="initialize()" onunload="GUnload()">
+<div id="map_canvas">
+</div>
+</body>
+</html>
+

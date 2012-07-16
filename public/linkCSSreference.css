@@ -1,0 +1,95 @@
+
+
+
+
+
+#payflow-link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #eeeeee;
+	color: #000000;
+	margin: 0;
+	padding: 0 15px;
+}
+#payflow-link form {
+	width: 420px;
+	margin: 0 auto;
+	text-align:center;
+}
+#payflow-link h1 {
+	font-size: 14px;
+  	font-weight: bold;
+	margin: 0 auto;
+	color: #000000;
+	padding: 0;
+	text-align:left;
+}
+#payflow-link p {
+	margin: 4px 0;
+	padding: 0;
+	text-align: left;
+	font-weight: bold;
+}
+#payflow-link p.note {
+	font-size: 9px;
+	font-weight: normal;
+}
+#payflow-link input {
+  	margin: 0;
+ 	padding: 0;
+  	font-size: 9px;
+}
+#payflow-link select {
+  	margin: 0;
+  	padding: 0;
+  	font-size: 9px;
+}
+
+#payflow-link table {
+  	margin: 0;
+  	padding: 0;
+	width: 100%;
+	border:0px solid #000000;
+ 	text-align:left;
+}
+#payflow-link th, td {
+	margin: 0;
+	padding: 2px 0;
+}
+#payflow-link thead th {
+	padding: 0;
+	font-size: 14px;
+ 	color: #ffffff;
+ 	font-weight: bold;
+ 	background-color: darkblue;
+}
+#payflow-link tbody th {
+ 	background-color: #cccccc;
+	font-size: 12px;
+  	text-align:left;
+  	width:25%;
+  	border:0px solid #000000;
+}
+#payflow-link tbody td {
+  	background-color: #ffffff;
+  	text-align:left;
+	font-size: 12px;
+  	font-weight: bold;
+  	width:75%;
+  	padding: 0;
+  	margin: 0;
+}
+#payflow-link .required {
+  	font-size: 10px;
+  	font-weight: normal;
+  	color: #FF0000;
+}
+#payflow-link .button {
+	margin: 4px;
+	background-color: #fff;
+	border-top: 1px solid #fff;
+	border-right:1px solid #000;
+	border-bottom:1px solid #000;
+	border-left:1px solid #fff;
+}
+ÿ

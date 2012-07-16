@@ -1,4 +1,4 @@
-   <ul id="faqs" style="list-style:url('/images/dash.png')">
+   <ul id="faqs">
    <% @faqs.each do |faq| %>  
     <li id="faq_<%= faq.id %>"> <%= link_to faq.question, faq %>
 			<% if admin? %>

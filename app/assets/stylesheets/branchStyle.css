@@ -77,11 +77,16 @@ header.main {
 #middleCol.wide {
 	width:600px;
 }
+h2 {
+	font-size: 1.3em;
+	color: #003663;
+	font-weight:normal;
+}
 h1 {
 	margin:10px;
 	padding:0;
 	color:#003663;
-	font-size: large;
+	font-size: 1.5em;
 }
 /*#middleCol ul li a {
 	color: #003663;
@@ -294,10 +299,7 @@ div.login {
 	padding-left: 20px;
 }
 /*Resources*/
-#middleCol h2 {
-	font-size: medium;
-	color: #63045d;
-}
+
 .instructions {
 	color: #B2B2B2;
 	color: gray;
