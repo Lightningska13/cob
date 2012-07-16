@@ -31,7 +31,7 @@ class Resource < ActiveRecord::Base
     # end
 
    	def self.find_for_home
-   		where('featured = ?',true).order(:position)
+   		where('featured = ?',true).order(:position).limit(10)
    	end
 
    	def self.text_search(query)

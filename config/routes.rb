@@ -16,7 +16,11 @@ Cob::Application.routes.draw do
     resources :contacts
   end
   
-  resources "resources"
+  resources :resources do
+    collection do 
+      post :sort
+    end
+  end
   
   resources "rescats"
   

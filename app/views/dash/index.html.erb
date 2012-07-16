@@ -21,10 +21,10 @@
 		<h1>Upcoming Events</h1>		
 			<% @events.each do |event| %>
 			<div class="eventItem <%= cycle('odd','even') %>">
-				<a href="events/<%= event.id %>">
-<%= event.start_date.to_date.to_s(:long) %> - <%= event.title %><br />
+				<%= link_to event_path(event) do %>
+					<%= event.start_date.to_date.to_s(:long) %> - <%= event.title %><br />
 					<div class="eventBlurb"><%= event.blurb %></div><br />
-				</a>
+				<% end %>
 			</div> <!-- eventItem -->
 			<% end %>
 		<div><%= link_to "View All Events...", events_path, :class=>'foot' %></div>
@@ -44,9 +44,10 @@
 		</div>
 		<div class="contentBox1_foot"></div>
 	</div><!--contentBox1 END-->
-	<div class="homeCenter">
+	<div class="resources">
 		<h1>Featured Resources</h1>
-		<div class="instructions"><%= @blurb %> </div>
+		
 		 <%= render :partial => "resources/resource_list" %>
+		<div><%= link_to "View All Resources...", resources_path, :class=>'foot' %></div>
 	</div>
 </div><!-- end rightCol -->

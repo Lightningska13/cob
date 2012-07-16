@@ -65,11 +65,10 @@ div.monthDivider {
 /****************
 * EVENTITEM (HOME PAGE CALENDAR)
 ****************/
-	div.eventItem {
+/*	div.eventItem {
 		margin-left:10px;
 		margin-right:10px;	
 		padding:10px 5px;
-		/*background:#eee;*/
 		border-top: 1px solid #aaa;
 		clear:both;
 	}
@@ -101,7 +100,7 @@ div.monthDivider {
 		font-weight:bold;
 		font-size:1.25em;
 	}
-	div.eventItem div.eventDesc {
+*/	div.eventItem div.eventDesc {
 /*		width:150px;*/
 	}	
 

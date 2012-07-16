@@ -12,7 +12,7 @@ class ResourcesController < ApplicationController
   end
 
   def sort
-  	params[:sortable].each_with_index do |id, index|
+  	params[:resource].each_with_index do |id, index|
   		Resource.update_all(['position=?', index+1], ['id=?', id])
   	end
   	render :nothing=>true
