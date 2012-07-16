@@ -23,7 +23,7 @@ class EventsController < ApplicationController
   		mytype="event_type='News'"
   		myorder='start_date desc'
 	    @page_title = "Announcements for Marshall, Mi"
-	    @eventHeader="Announcements"
+	    @eventHeader="Announcements / News"
 	    unless admin?
 	      @mycondition = @mycondition + " AND start_date<='#{Date.today}'"
 	    end
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
    		mytype="event_type='Event'"
   		myorder='start_date asc'
 	    @page_title = "Events for Marshall, Mi"
-	    @eventHeader="Announcements/News"
+	    @eventHeader="Events and Happenings"
  		end
  		
 	  @events = Event.find(:all, :order=>myorder, :conditions=>mytype + @mycondition)

@@ -82,7 +82,7 @@ h1 {
 	color:#003663;
 	font-size: large;
 }
-#middleCol ul li a {
+/*#middleCol ul li a {
 	color: #003663;
 	color:blue;
 	text-decoration: none;
@@ -93,7 +93,7 @@ h1 {
 	color:red;
 	text-decoration: underline;
 	font-size: 90%;
-}
+}*/
 .pageHeader {
 	margin:10px;
 	padding:0;
@@ -305,7 +305,11 @@ div.login {
 /*FAQS*/
 #faqs {
 }
-#faqs li a {
+#faqs li {
+	margin-top:8px;
+	margin-bottom:0;
+}
+/*#faqs li a {
 	color: #003663;
 	text-decoration: none;
 	font-size: 90%;
@@ -314,6 +318,12 @@ div.login {
 	color: #003663;
 	text-decoration: underline;
 	font-size: 90%;
+}
+*/
+#faqs div span {
+	font-size:x-small;
+	/*color:#630434;*/
+	color:#737161;
 }
 .question {
 	color: #003663;
@@ -328,6 +338,16 @@ div.login {
 	margin-top: -8px;
 }
 
+a {
+	color:blue;
+	text-decoration: none;
+	font-size: 90%;
+	}
+	
+a:hover {
+	color:red;
+	text-decoration: underline;
+}
 a.admin {
 	background-color:#EEEEEE;
 	color:black;
@@ -342,4 +362,3 @@ a.admin:hover {
 	border:1px inset;
 	text-decoration:none;
 	}
-/*JQUERY CSS*/
