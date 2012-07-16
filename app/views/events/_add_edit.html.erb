@@ -45,13 +45,12 @@
     <%= f.label 'Department' %><br />
 		<%= collection_select(:event, :department_id, @departments, :id, :dept_name) %>
   </p>
-  <div style="clear:both;">
+  <div>
     <%= f.submit @button_text %>
   </div>
   <p>
 	<%= link_to 'Cancel', events_path, :class=>'admin' %>
   </p>
 </div>
-<div id="rightCol">
-</div>
+
 <% end %>

@@ -1,7 +1,7 @@
 class Resource < ActiveRecord::Base
   has_attached_file :res 
 	has_and_belongs_to_many :rescats
-	has_and_belongs_to_many :departments, :order=>"name asc"
+	has_and_belongs_to_many :departments, :order=>"dept_name asc"
 	
   validates_presence_of :res_file_name, :message => "( Document/URL ) cannot be empty"
   validates_presence_of :title
