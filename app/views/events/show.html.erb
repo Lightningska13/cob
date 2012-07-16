@@ -1,6 +1,6 @@
 
 <div id="middleCol">
-	<p><%= link_to "View All Events", events_path %> <%= link_to "View All Announcements", events_path(:t=>'News') %></p>
+	<p><%= link_to "View All Events", events_path %> <%= link_to "View All Announcements", events_path(:t=>'News'), :class => 'admin' %></p>
   <h1><%=h @event.title %></h1>
 	<p>
 	  <i><%= @event.blurb %></i>
