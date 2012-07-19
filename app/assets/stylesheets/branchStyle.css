@@ -17,7 +17,7 @@ nav#main {
 	width:605px;
 }
 nav#main img {
-	margin-right:-5px;
+	border:none;
 }
 nav#main img:hover {
 	opacity: .9;

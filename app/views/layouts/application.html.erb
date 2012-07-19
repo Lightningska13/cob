@@ -15,7 +15,7 @@
 			<%= image_tag("/assets/header/header1.png") %>
 		</header>
 		<nav id="main">
-			<%= render "/layouts/main_nav" %>
+			<%= render "/layouts/main_nav2" %>
 		</nav><!--endmainNav-->
 			<%= render "/layouts/admin_nav" %>
 		<div id="leftCol">
@@ -27,7 +27,7 @@
 		
 	</div><!-- end pageContent -->
 	<footer>
-		Copyright 2012 Branch County Coldwater, MI 49036 517.279.4300 <br />
+		Copyright <%= Date.today.strftime("%Y") %> Branch County Coldwater, MI 49036 517.279.4300 <br />
 		<%= link_to "Aetistry", ('http://www.aetistry.com/'), :target => "_blank" %>
 	</footer>
 	<%= yield (:javascript) %>

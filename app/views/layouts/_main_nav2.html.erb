@@ -1,0 +1,14 @@
+<ul id="nav">
+	<li><%= link_to image_tag("/assets/header/home.png"), root_path %></li>
+	<li><%= link_to image_tag("/assets/header/departments.png"), departments_path %>
+		<ul>
+			<% @dept_list.each do |dept|%>
+			<li><%= link_to dept.dept_name, department_path(dept)%></li>
+			<% end %>
+		</ul>			
+		<div class="clear"></div>
+	</li>
+	<li><%= link_to image_tag("/assets/header/reference.png"), resources_path %></li>
+	<li><%= link_to image_tag("/assets/header/news.png"), events_path(:t => 'News') %></li>	
+	<div class="listDate"><%= Date.today.strftime("%B %d, %Y") %></div>
+</ul>	

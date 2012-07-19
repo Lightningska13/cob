@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def dept_list
-		@dept_list= Department.find(:all, :order=>'id asc', :conditions=>'id>10')
+		@dept_list= Department.order(:dept_name)
 	end
 	  
   def help
