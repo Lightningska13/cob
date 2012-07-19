@@ -34,12 +34,13 @@
 			<% if @faqs.any? %>
 			<h2 class="listDivider">Common Solutions</h2>
 			<%= render :partial=>'faqs/faq_list' %>
+			<p ><%= link_to 'View all ' + @department.dept_name + ' FAQs', {:action=>:index, :controller=>:faqs, :dept=>@department}, :class=>'foot' %></p>
 			<% end %>
 
 			<% if @resources.any? %>
 			<h2 class="listDivider">Resources</h2>
 			<%= render 'resources/resource_list'%>
-			<p style="text-align:right;"><%= link_to 'view all ' + @department.dept_name + ' resources', {:action=>:index, :controller=>:resources, :dept=>@department}, :class=>'foot' %></p>
+			<p ><%= link_to 'View all ' + @department.dept_name + ' resources', {:action=>:index, :controller=>:resources, :dept=>@department}, :class=>'foot' %></p>
 			<% end %>
 
 	</div>

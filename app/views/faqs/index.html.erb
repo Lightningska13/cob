@@ -5,13 +5,41 @@
 	<%= link_to 'New FAQ', new_faq_path, :class => 'admin' %> 
 	<%= link_to 'FAQ Categories', faq_categories_path, :class => 'admin' %>
 <% end %>
+<div>
+	<%= form_tag faqs_path, :method => 'get' do %>
+  <p>
+    <label class="instructions"> Keyword Search</label><br />
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+	<% end %>
+	<p class="instructions">Enter a search term, such as <tt><big>education</big></tt> or <tt><big>conference</big></tt>
+	</p>
+</div>
 
-<% @faq_dept.each do |dept, @faqs| %>  
-	<a name="<%= dept.id %>"></a>
- <h2 class="deptDivider description"><%= dept.dept_name %></h2> 
- 		<%= render :partial=>"faq_list" %>
-<% end %> 
+<% if params[:cat] || params[:dept] %>
+	 <h2 class="deptDivider description"><%= @title_text %></h2> 
+	<%= render :partial=>"faq_list" %>
+
+<% else %>
+	<% @faq_dept.each do |dept, @faqs| %>  
+		<a name="<%= dept.id %>"></a>
+	 <h2 class="deptDivider description"><%= dept.dept_name %></h2> 
+	 		<%= render :partial=>"faq_list" %>
+	<% end %> 
+<% end %>
 </div>
 <div id="rightCol">
+	<p><%= link_to "View All", faqs_path, :class => 'foot sidebar'%></p>
+
+	<h3 class="title">FAQ Categories</h3>
+	<span class="instructions">Click to Browse by Category</span>
+			<ul class="pineapple">
+			<% @faq_categories.each do |cat| %>
+				<% unless cat.faqs.empty? %>
+				<li><%= link_to cat.category, :action=>:index, :controller=>:faqs, :cat=>cat %></li>
+				<% end %>
+			<% end %>
+			</ul>
 </div>
 

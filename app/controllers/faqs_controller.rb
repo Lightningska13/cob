@@ -3,11 +3,12 @@ class FaqsController < ApplicationController
 	# @departments here. Doesn't work in New and Edit when validations run
 	# put it here instead of in the view (where it works also with validations)
 	# This is the same as including the @departments in each of the listed actions
-  before_filter :instantiate_departments, :only => [:new, :edit, :create, :update]
+  before_filter :instantiate_departments, :only => [:index, :new, :edit, :create, :update]
 	before_filter :check_auth, :only=>[:edit]
   
   def instantiate_departments
-  	@departments = Department.find(:all, :order => 'id asc')
+  	@departments = Department.find(:all, :order => 'dept_name asc')
+  	@faq_categories=FaqCategory.order(:category)
   	@page_title = "#{@current_action.titleize} FAQs"
   end
   
@@ -29,10 +30,30 @@ class FaqsController < ApplicationController
   # GET /faqs.xml
   def index
     get_dept_cat
+   	@page_title = "FAQs"
+  	if params[:dept] and (params[:dept]) != ""
+  		@dept = Department.find(params[:dept])
+	    @faqs = @dept.faqs.order(:position)
+	    @title_text= @dept.dept_name
+  	  @blurb= (@faqs.size == 1 ? "There is 1 result." : "There are #{@faqs.size} results.")
+ 	    @page_title= @page_title + @title_text 
+ 	  elsif params[:cat]
+    		@cat = FaqCategory.find(params[:cat])
+  	    @faqs = @cat.faqs
+  	    @title_text= @cat.category
+   	    @page_title= @page_title + @title_text
+ 		elsif params[:search] and (params[:search] != "")
+	  	@faqs = Faq.search(params[:search])
+	    @title_text='Search Results'
+  	  @blurb= (@faqs.size == 1 ? "There is 1 result." : "There are #{@faqs.size} results.")
+ 		else 
+	  	@faqs = Faq.order(:position)
+	    @title_text='All FAQs'
+  	  @blurb= ''
+    end
     if admin?
     	@cursor_style = 'cursor:move;' # show drag cursor on sortable list
     end
-  	@page_title = "FAQs"
 
     respond_to do |format|
       format.html # index.html.erb
