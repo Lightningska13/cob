@@ -39,6 +39,10 @@ dl.resourceList dt.page a{
 		background:url('/assets/page.png') no-repeat top left;
 		padding-left:25px;
 	}
+dl.resourceList dt.ppt a{
+		background:url('/assets/ppt.gif') no-repeat top left;
+		padding-left:25px;
+	}
 
 dl.homelist dt.doc a{
 		background:url('/assets/news_icon_sm.gif') no-repeat top left;
@@ -62,6 +66,10 @@ dl.homelist dt.link a{
 	}
 dl.homelist dt.page a{
 		background:url('/assets/page.png') no-repeat top left;
+		padding-left:25px;
+	}
+dl.homelist dt.ppt a{
+		background:url('/assets/ppt.gif') no-repeat top left;
 		padding-left:25px;
 	}
 dl.resourceList  dd {

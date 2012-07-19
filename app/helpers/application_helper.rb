@@ -36,6 +36,8 @@ module ApplicationHelper
 			thisClass = "word"
 		elsif  mime == "application/ms-excel" or mime == "application/vnd.ms-excel"
 			thisClass = "excel"
+		elsif mime == "application/vnd.ms-powerpoint"
+		  thisClass = "ppt"
 		elsif  mime == "application/pdf"
 			thisClass = "pdf"
 		elsif  mime == "application/octet"
