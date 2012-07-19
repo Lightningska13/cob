@@ -1,0 +1,81 @@
+fieldset {
+	border:none;
+	margin:5px 0px;
+	}
+	
+div.input_block {
+	float:left;
+	}
+	div.input_block {
+		margin-bottom:5px;
+		}
+.input_label {
+	color:#585841;
+	font-size:small;
+	display:block;
+	text-align:left;
+	}
+div.input_block input {
+	margin-right:10px;
+	}
+
+div.radio_block input.radio {
+		margin-right:3px;
+		}
+span.radio_label {
+	margin-right:10px;
+	font-size:small;
+	color:#585841;
+}	
+span.app_question {
+	font-size:small;
+}
+
+div.formSection {
+	border:1px #f0f0f0 solid;
+	padding:10px;
+	margin-bottom:20px;
+	}
+
+div.formInstructions {
+	COLOR:#630434;
+	margin-right:5px;
+	padding:5px;
+	background:#FFFFEE;
+	border:1px solid #630434;
+}
+
+div.formInstructions span.title {
+	COLOR:#630434;
+}
+div.formInstructions dt {
+	font-weight:bold;
+	margin-top:5px;
+}
+div.formInstructions dd {
+	margin-left:5px;
+}
+div.formInstructions dd ul {
+	margin-left:5px;
+	padding-left:15px;
+}
+div.dlink a{
+	color:blue;
+	font-size:small;
+	padding-left:20px;
+	display:block;
+	}
+div.dlink a:hover{
+		color:red;
+	}
+
+div.add a{
+	background:url('/assets/plus3.png') left no-repeat;
+	}
+div.remove a{
+	background:url('/assets/minus3.png') left no-repeat;
+	height:20px;
+	float:right;
+	margin:5px 0 5px 0;
+	}
+

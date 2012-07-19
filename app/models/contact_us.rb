@@ -4,11 +4,11 @@ class ContactUs
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  validates_presence_of :name, :message
+  validates_presence_of :name, :message, :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   
 
-  attr_accessor :name, :email, :message
+  attr_accessor :name, :email, :message, :department_id
 
   def initialize(attributes = {})
     attributes.each do |name, value|

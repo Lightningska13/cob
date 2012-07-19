@@ -24,7 +24,8 @@ Cob::Application.routes.draw do
   
   resources "rescats"
   
-  resources "contact_us"
+  match 'new_contact' =>  'contact_us#new', :conditions => { :method => :get }
+  resources :contact_us, :only => [:new, :create]
 
   resources :faqs do
     collection do

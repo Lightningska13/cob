@@ -308,9 +308,9 @@ div.login {
 /*Resources*/
 
 .instructions {
-	color: #B2B2B2;
 	color: gray;
-	font-size: x-small;
+	color: #666666;
+	font-size: .8em;
 	text-decoration: none;
 	padding-left: 10px;
 }

@@ -56,3 +56,7 @@
   <%= simple_format(@department.dept_mailing, :style => 'margin-bottom:8px;') %>
 </div>
 <% end %>
+
+<% if @department.dept_email.any? %>
+	<%= button_to "Contact Us", new_contact_path(:id => @department.id), :form => {:style => 'padding-left:10px;'} %>
+<% end %>	
