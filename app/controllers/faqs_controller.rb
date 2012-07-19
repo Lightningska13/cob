@@ -47,6 +47,7 @@ class FaqsController < ApplicationController
 	  	@faqs = Faq.text_search(params[:query])
 	    @title_text='Search Results'
   	  @blurb= (@faqs.size == 1 ? "There is 1 result." : "There are #{@faqs.size} results.")
+ 	    @page_title= @page_title + @title_text
  		else 
 	  	@faqs = Faq.order(:position)
 	    @title_text='All FAQs'
