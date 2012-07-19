@@ -41,9 +41,10 @@ class FaqsController < ApplicationController
     		@cat = FaqCategory.find(params[:cat])
   	    @faqs = @cat.faqs
   	    @title_text= @cat.category
+    	  @blurb= (@faqs.size == 1 ? "There is 1 result." : "There are #{@faqs.size} results.")
    	    @page_title= @page_title + @title_text
- 		elsif params[:search] and (params[:search] != "")
-	  	@faqs = Faq.search(params[:search])
+ 		elsif params[:query] and (params[:query] != "")
+	  	@faqs = Faq.text_search(params[:query])
 	    @title_text='Search Results'
   	  @blurb= (@faqs.size == 1 ? "There is 1 result." : "There are #{@faqs.size} results.")
  		else 

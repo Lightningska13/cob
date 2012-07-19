@@ -17,8 +17,9 @@
 	</p>
 </div>
 
-<% if params[:cat] || params[:dept] %>
+<% if params[:cat] || params[:dept] || params[:query] %>
 	 <h2 class="deptDivider description"><%= @title_text %></h2> 
+	<div class="instructions"><%== @blurb %> </div>
 	<%= render :partial=>"faq_list" %>
 
 <% else %>
