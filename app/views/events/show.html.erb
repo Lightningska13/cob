@@ -21,7 +21,7 @@
 <% if @event.url.any? %>
 <p class="instructions">
   <b>For more information:</b>
-  <%= link_to @event.url, @event.url %>
+  <%= link_to @event.url, format_url(@event.url) %>
 </p>
 <% end %>
 
