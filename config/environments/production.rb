@@ -50,7 +50,7 @@ Cob::Application.configure do
   # config.assets.precompile += %w( search.js )
   #ADDED FOR CKEDITOR
   #config.assets.precompile += [ /.*config\.js/, /.*en.js/, /.*editor.css/ ]
-  config.assets.precompile += Ckeditor.assets
+  #config.assets.precompile += Ckeditor.assets
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
