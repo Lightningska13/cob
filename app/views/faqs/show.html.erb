@@ -7,7 +7,7 @@
 
 	<% if @faq.url.size > 0 %>
 	<br /><br />
-	<span class="instructions">Additional information is available at:  <%= link_to @faq.url, @faq.url %></span>
+	<span class="instructions">Additional information is available at:  <%= link_to @faq.url, format_url(@faq.url) %></span>
 	<% end %>
 	<br /><br />
 	<span class="list_date">posted <%= @faq.updated_at.strftime("%m-%d-%Y")  %>
