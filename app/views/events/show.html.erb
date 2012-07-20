@@ -25,11 +25,9 @@
 </p>
 <% end %>
 
-	<span class="list_date">
+	<span class="list_date">[<%= @event.department.dept_name %>] </span> 
 
-		[<%= @event.department.dept_name %>] </span> 
-
-
+</div> <!--eventListing -->
 <% if admin? %>
 <br />
 <%= link_to 'Edit', edit_event_path(@event), :class=>'admin' %> 
