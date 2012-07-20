@@ -33,7 +33,7 @@
 
 </div><!-- end middleCol -->
 <div id="rightCol">
-	<% if @showcase.exists? %>
+	<% unless @showcase.nil? %>
 	<div class="contentBox1_holder">
 		<div class="contentBox1_head">
 			<div class="contentBox1_title">COUNTY SHOWCASE</div>
