@@ -1,49 +1,15 @@
 <%= form_for(@showcase, :html => { :multipart => true }) do |f| %>
-<% if @showcase.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@showcase.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div id="middleCol">
+	<% if @showcase.errors.any? %>
+	  <div id="error_explanation">
+	    <h2><%= pluralize(@showcase.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-    <ul>
-    <% @showcase.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>  <div id="subContent" >
- 		<% if false #use for multiple showcases %>
-		<div class="showcase_image_list">
-		 <h3> Select Services</h3>
-		 <% for service in @services %>  
-				 <div>  
-					 <label><%= check_box_tag "showcase[service_ids][]", service.id, @showcase.services.include?(service) %>  
-					 <%= service.name %>  </label>
-				 </div>  
-		 <% end %>
-		<br />
-		</div>
-		<% end %>
-   
-   <% if @button_text == 'Update' %> 
-   <div class="showcase_image_list">
-    <h2 class="title">Media</h2>   
- 	<%= link_to "Add Media", new_showcase_showcase_media_path(@showcase), :class=>'foot' %><br />
-    <%= render :partial => 'showcase_media_draggable'%>
-    
-  </div>
-   <div class="showcase_image_list">
-    <h2 class="title">Image Gallery</h2>   
- 	<%= link_to "Add Photo", new_showcase_showcase_image_path(@showcase), :class=>'foot' %><br />
-	<span class="instructions">Drag images to reorder them</span>
-    <%= render :partial => 'showcase_image_draggable'%>
-    
-  </div>
-  <% else %>
-  	<span class="instructions"> Add Images and Media after creating showcase</span>
-  <% end %> 
-    <div>
-    <%= f.label :sidebar %><br />
-     <%= f.cktext_area(:sidebar, :toolbar => 'Basic', :width => '250px', :height => '300px') %>
-    </div>
+	    <ul>
+	    <% @showcase.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>  
+	<% end %>
 
- </div>
-<div>
 	<div class="field">
     	<%= f.label :title %><br />
     	<%= f.text_field :title, :size=>60 %>
@@ -71,10 +37,36 @@
 	</div>
 	<div class="field">
     	<%= f.label :article %><br />
-    	<%= f.cktext_area(:article, :toolbar => 'Basic2', :width => '500px', :height => '400px') %>	
+    	<%= f.cktext_area(:article, :toolbar => 'Basic2', :width => '350px', :height => '400px') %>	
   	</div>
   	<div class="actions">
     	<%= f.submit %>
   	</div>
+</div>
+<div id="rightCol" >
+
+   <% if @button_text == 'Update' %> 
+   <div class="showcase_image_list">
+    <h2 class="title">Media</h2>   
+ 	<%= link_to "Add Media", new_showcase_showcase_media_path(@showcase), :class=>'foot' %><br />
+    <%= render :partial => 'showcase_media_draggable'%>
+
+  </div>
+   <div class="showcase_image_list">
+    <h2 class="title">Image Gallery</h2>   
+ 	<%= link_to "Add Photo", new_showcase_showcase_image_path(@showcase), :class=>'foot' %><br />
+	<span class="instructions">Drag images to reorder them</span>
+    <%= render :partial => 'showcase_image_draggable'%>
+
+  </div>
+  <% else %>
+  	<span class="instructions"> Add Images and Media after creating showcase</span>
+  <% end %> 
+    <div>
+    <%= f.label :sidebar %><br />
+     <%= f.cktext_area(:sidebar, :toolbar => 'Format',:width => '205px',   :height => '300px') %>
+    </div>
+
  </div>
+
 <% end %>

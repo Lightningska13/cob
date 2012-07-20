@@ -1,0 +1,51 @@
+/*************************************
+*  MONTH DIVIDER                  *
+**************************************/
+.monthDivider {
+		background:#585841; /* #505091;*/
+		display:block;
+		color:#fff;
+		line-height:1.5em;
+		padding-left:5px;
+		font-size:small;
+		font-weight:bold;
+		margin-top:2em;
+		margin-bottom:10px;
+		/*width:505px;*/
+		/*clear:both;*/
+	}
+	
+.deptDivider {
+		background:#FFFDE7;/*E3F7E3*/
+		border-left:1px solid #2c1c81;
+		border-bottom:1px solid #2c1c81;
+		
+		display:block;
+		color:#2c1c81;
+		line-height:1.5em;
+		padding-left:5px;
+		font-size:small;
+		font-weight:bold;
+		margin-top:2em;
+		margin-bottom:10px;
+		margin-right:20px;
+		/*width:505px;*/
+		/*clear:both;*/
+	}
+.listDivider {
+/*		background:#FFFDE7;
+		border-left:1px solid #2c1c81;
+		border-bottom:1px solid #2c1c81;
+		display:block;
+		color:#2c1c81;
+		line-height:1.5em;
+*/		
+		padding-left:5px;
+		font-size:small;
+		font-weight:bold;
+	/*	margin-top:2em;
+		margin-bottom:10px;
+		margin-right:20px;
+		width:505px;*/
+		/*clear:both;*/
+	}

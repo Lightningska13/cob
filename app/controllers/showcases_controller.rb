@@ -15,7 +15,7 @@ class ShowcasesController < ApplicationController
   # GET /showcases
   # GET /showcases.xml
   def index
-    @published = Showcase.find(:all, :order=>'publish_date desc', :conditions=>"published = 'true'")
+    @published = Showcase.published
     @showcases = Showcase.find(:all, :order=>'publish_date desc')
 		@page_title = "Showcases"
     respond_to do |format|

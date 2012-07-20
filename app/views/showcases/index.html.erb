@@ -1,18 +1,12 @@
-<%- if admin? -%>
-	<%- content_for(:leftCol) do -%>
-		<div id="adminNav">
-		<%= link_to 'New showcase', new_showcase_path, :class=>'admin' %>
-		</div>
-	<%- end -%>
-<%- end -%>
-
+<div id="middleCol">
 <div id="eventListing">
- <h2 class="monthDivider">Showcase Archives</h2>  
-   <dl>
+ <h2>Showcase Archives</h2>  
+  <%= link_to 'New showcase', new_showcase_path, :class=>'admin' if admin? %>
+	<dl>
  		<% unless admin? %>
 	   	<% @published.each do |showcase| %>  
 				<dt><%= link_to showcase.title, showcase %> <span>published <%= showcase.publish_date.to_date.to_s(:long) %></span></dt>
-				<dd><%=h showcase.blurb %></dd>    
+				<!-- <dd><%= showcase.blurb %></dd>  -->  
 		  <% end %>  
 		<% else %>
 		 <% @showcases.each do |showcase| %>  
@@ -27,5 +21,6 @@
 			<dd><%= link_to 'Edit', edit_showcase_path(showcase), :class => 'admin' %> <%= link_to 'Delete', showcase, :class => 'admin', :confirm => 'Are you sure?', :method => :delete %></dd>
 		 <% end %>  
 		<% end %>
-	</dt>
+	</dl>
+</div>
 </div>

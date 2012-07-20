@@ -3,7 +3,7 @@
 	<h2>Common Solutions</h2> 
 	<%= render :partial => "faqs/faq_list" %>
 		<%= link_to "View All FAQs...", faqs_path, :class=>'foot' %>
-		<% if @news.size>0 %>
+		<% if @news.any?%>
 		<h2>Announcements</h2> 
 			 <ul>
 			 <% @news.each do |news| %>  
@@ -18,16 +18,18 @@
 			</ul>
 			<div><%= link_to "View All Announcements...", events_path(:t=>'News'), :class=>'foot' %></div>
 	<% end %>
+	<% if @events.any?%>
 		<h2>Upcoming Events</h2>		
 			<% @events.each do |event| %>
 			<div class="eventItem <%= cycle('odd','even') %>">
 				<%= link_to event_path(event) do %>
-					<%= event.start_date.to_date.to_s(:long) %> - <%= event.title %><br />
+					<span class="eventDate"><%= event.start_date.to_date.to_s(:long) %></span> - <%= event.title %><br />
 					<div class="eventBlurb"><%= event.blurb %></div><br />
 				<% end %>
 			</div> <!-- eventItem -->
 			<% end %>
 		<div><%= link_to "View All Events...", events_path, :class=>'foot' %></div>
+	<% end %>
 
 </div><!-- end middleCol -->
 <div id="rightCol">
@@ -36,11 +38,10 @@
 			<div class="contentBox1_title">COUNTY SHOWCASE</div>
 		</div>
 		<div class="contentBox1_body">
-			<a href="showcase2.taf?_function=detail&showcase_uid1=108&_UserReference=B96315F8B0804A234FFEE806" class="title"><b>County Showcase</b></a><br />
-<!-- Begin eLocalLink Code :ml418vp5c-4814 -->
-	<script language="JavaScript" src="http://elocallink.tv/mlink/mlink.php?x=VmRQaAJnBGg="></script>
-<!-- End eLocalLink Code :twn918vp2 -->
-			<br /><br /><a href="showcase2.taf?_function=detail&showcase_uid1=108&_UserReference=B96315F8B0804A234FFEE806" class="foot">Read More...</a>
+			<h2><%= link_to @showcase.title, @showcase, :class => 'title' %></h2>
+			<%= link_to image_tag (@showcase.photo.url(:medium),  :alt  => @showcase.title, :class => 'imageshadow'), @showcase if @showcase.photo_file_name %>
+			<p><%== @showcase.blurb %></p> 
+			<div class="article" style="font-size:small;"><%= link_to 'Read more', @showcase, :class => 'foot'%></div>
 		</div>
 		<div class="contentBox1_foot"></div>
 	</div><!--contentBox1 END-->

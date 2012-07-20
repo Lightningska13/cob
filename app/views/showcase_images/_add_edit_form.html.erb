@@ -1,0 +1,27 @@
+<%= form_for([@showcase, @showcase_image], :html => { :multipart => true }) do |f| %>
+ <% if @showcase.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(@showcase.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+     <ul>
+     <% @showcase.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>
+
+  <p>
+      <%= f.label :photo, "Photo" %>  
+      <%= f.file_field :photo %>  
+</p>
+  <p>
+    <%= f.label :caption %><br />
+    <%= f.text_area :caption %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', edit_showcase_path(@showcase) %>

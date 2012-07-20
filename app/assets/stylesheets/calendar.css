@@ -1,15 +1,14 @@
 /*************************************
 *  DIVIDERS                          *
 **************************************/
-div.monthDivider {
+/*div.monthDivider {
 	margin:15px 0 0 0;
 	padding:2px 5px 2px 5px;
-	/*background:#30367B;*/
+	background:#30367B;
 	background:#611122;
 	border:1px solid #fff;
 	color:#fff;
-	/*width:80%;*/
-}
+}*/
 
 	div.fb5 {
 	/*	background:#9B143C;

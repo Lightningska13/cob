@@ -1,0 +1,5 @@
+<h1>Editing showcase_media</h1>
+
+<p><%= @showcase_media.media_file_name %></p>
+<%= link_to "download file", @showcase_media.media.url %>
+<%= render :partial => 'add_edit_form'%>

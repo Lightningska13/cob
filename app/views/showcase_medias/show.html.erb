@@ -1,0 +1,28 @@
+<p>
+  <b>Media file name:</b>
+  <%=h @showcase_media.media_file_name %>
+</p>
+
+<p>
+  <b>Media content type:</b>
+  <%=h @showcase_media.media_content_type %>
+</p>
+
+<p>
+  <b>Media file size:</b>
+  <%=h @showcase_media.media_file_size %>
+</p>
+
+<p>
+  <b>Caption:</b>
+  <%=h @showcase_media.caption %>
+</p>
+
+<p>
+  <b>Showcase:</b>
+  <%=h @showcase_media.showcase_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_showcase_media_path(@showcase_media) %> |
+<%= link_to 'Back', showcase_medias_path %>

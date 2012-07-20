@@ -1,32 +1,32 @@
 <div id="middleCol">
 	<div id="eventListing">
 		<h1><%= @eventHeader %></h1>
-			<p>| <%= link_to "News", events_path(:t=>'News') %> | <%= link_to "Events", events_path %> |</p>
-<% if admin? %>
-	<%= link_to 'New Event', new_event_path, :class => 'admin' %>
-<% end %>
+		<p>| <%= link_to "News", events_path(:t=>'News') %> | <%= link_to "Events", events_path %> |</p>
+		<% if admin? %>
+			<%= link_to 'New Event', new_event_path, :class => 'admin' %>
+		<% end %>
 
-<% @event_months.each do |month, events| %>  
- <h2 class="deptDivider"><%= month.strftime("%B %Y") %></h2>  
-   <dl>
-   <% events.each do |event| %>  
-    <dt <%="class='#{event.event_type}'"-%> style="margin-top:8px;"><span><%= event.start_date.to_date.to_s(:long) %></span> - <%= link_to event.title, event %></dt>
-    <div class="eventBlurb"><%= event.blurb %></div>
-      <% if admin? %>
+		<% @event_months.each do |month, events| %>  
+		 <h2 class="monthDivider boxshadow"><%= month.strftime("%B %Y") %></h2>  
+		   <dl>
+		   <% events.each do |event| %>  
+		    <dt <%="class='#{event.event_type}'"-%> style="margin-top:8px;"><span><%= event.start_date.to_date.to_s(:long) %></span> - <%= link_to event.title, event %></dt>
+		    <dd class="eventBlurb"><%= event.blurb %></dd>
+ 			<% if admin? %>
 				<dd><%= link_to	'Edit', edit_event_path(event), :class => 'admin' %>  
-				<%= link_to 'Delete', event, :confirm => 'Are you sure?', :method => :delete, :class => 'admin'%>
+					<%= link_to 'Delete', event, :confirm => 'Are you sure?', :method => :delete, :class => 'admin'%>
 				</dd>
 			<% end %>
-  <% end %>  
-  </dl>
-<% end %> 
+		  <% end %>  
+		  </dl>
+		<% end %> 
 
-<% if admin? %>
-<br />
+		<% if admin? %>
+		<br />
 
-<%= link_to 'New Event', new_event_path, :class => 'admin' %>
-<% end %>
-</div>
+		<%= link_to 'New Event', new_event_path, :class => 'admin' %>
+		<% end %>
+	</div>
 </div>
 <div id="rightCol">
 </div>

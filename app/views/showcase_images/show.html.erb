@@ -1,0 +1,33 @@
+<p>
+  <b>Photo file name:</b>
+  <%=h @showcase_image.photo_file_name %>
+</p>
+
+<p>
+  <b>Photo content type:</b>
+  <%=h @showcase_image.photo_content_type %>
+</p>
+
+<p>
+  <b>Photo file size:</b>
+  <%=h @showcase_image.photo_file_size %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @showcase_image.position %>
+</p>
+
+<p>
+  <b>Caption:</b>
+  <%=h @showcase_image.caption %>
+</p>
+
+<p>
+  <b>Showcase:</b>
+  <%=h @showcase_image.showcase_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_showcase_image_path(@showcase_image) %> |
+<%= link_to 'Back', showcase_images_path %>
