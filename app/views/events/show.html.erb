@@ -1,5 +1,5 @@
 
-<div id="middleCol">
+<div id="middleCol" class="wide">
 	<div id="eventListing">
 	<p>| <%= link_to "News", events_path(:t=>'News') %> | 
 	<%= link_to "Events", events_path %> | 
@@ -35,6 +35,4 @@
 <%= link_to 'Edit', edit_event_path(@event), :class=>'admin' %> 
 <%= link_to 'Back', events_path(:t=>@event.event_type), :class=>'admin' %>
 <% end %>
-</div>
-<div id="rightCol">
 </div>
