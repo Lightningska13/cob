@@ -18,14 +18,14 @@
 </div>
 
 <% if params[:cat] || params[:dept] || params[:query] %>
-	 <h2 class="deptDivider description"><%= @title_text %></h2> 
+	 <h2 class="monthDivider boxshadow"><%= @title_text %></h2> 
 	<div class="instructions"><%== @blurb %> </div>
 	<%= render :partial=>"faq_list" %>
 
 <% else %>
 	<% @faq_dept.each do |dept, @faqs| %>  
 		<a name="<%= dept.id %>"></a>
-	 <h2 class="deptDivider description"><%= dept.dept_name %></h2> 
+	 <h2 class="monthDivider boxshadow"><%= dept.dept_name %></h2> 
 	 		<%= render :partial=>"faq_list" %>
 	<% end %> 
 <% end %>
